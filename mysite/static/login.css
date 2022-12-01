@@ -1,0 +1,72 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: white;
+}
+
+.card-header {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    color: #fff;
+}
+
+#login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.card {
+    background-color: #f39d38;
+    padding: 40px;
+    border-radius: 15px;
+    width:500px;
+}
+
+.card-content-area {
+    display: flex;
+    flex-direction: column;
+    padding:5px 0;
+}
+
+.card-content-area input {
+    margin-top: 10px;
+    padding:12PX 5px;
+    background-color: WHITE;
+    border:none;
+    border-radius: 10px;
+    border-bottom: 1px solid #e1e1e1;
+    outline: #fff;
+    color: black;
+}
+
+.card-footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-footer .button {
+    background-color: white; 
+    border: none;
+    color: black;
+    padding: 10px 0px;
+    margin-top: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    width: 30%;
+    margin-left: 180px;
+    text-decoration: none;
+}
+
+.card-footer .button {
+    transition-duration: 0.4s;
+  }
+  
+  .card-footer .button:hover {
+    background-color: orange; 
+    color: white;
+  }

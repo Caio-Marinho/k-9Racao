@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+
+.body{
+    padding: 0;
+    font-family: 'inter', sans-serif;
+}
+
+.titulo {
+    display: flex;
+    background-color: #ffffff;
+    width: 1325px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-bottom: 2px gray solid;
+}
+
+h2{
+margin-left: 10px;
+}
+
+.titulo .canto{    
+margin-left: 1030px;
+}
+
+.backgroundx{
+    background-color: rgba(243, 157, 56, 35%) ;
+    width: 520px;
+    height: 250px;
+    border-radius: 10px;
+    position: absolute;
+    top: 90px;
+    left: 65px;
+}
+.Descricao{
+    position: absolute;
+    top: 330px;
+    left: 62px;
+}
+.values{
+    position: absolute;
+    top: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.valor{
+    position: absolute;
+    left:430px ;
+}
+.Quantidade{
+    position: absolute;
+    left: 100px;
+}
+.botoes1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 590px;
+    left: 200px;
+}
+.excluir{
+    font-size: large;
+    width: 120px;
+    height: 50px;
+    position: absolute;
+    right: -15px;
+    background-color: #F39D38;
+    border-width: 0;
+    border-radius: 6px;
+}
+.excluir:hover{
+    background-color: #ffb867;
+}
+.editar{
+    font-size: large;
+    width: 120px;
+    height: 50px;
+    position: absolute;
+    left: 200px;
+    background-color: #F39D38;
+    border-width: 0;
+    border-radius: 6px;
+}
+.editar:hover{
+    background-color: #ffb867;
+}
+.LinhaCentral{
+    border-left: 6px solid rgb(117, 117, 117);
+    height: 590px;
+    position: absolute;
+    top: 68px;
+    left: 650px;
+}
+.historicoV{
+    position: absolute;
+    left: 700px;
+    top: 120px;
+}
+
+ul{
+    list-style-type: none;  
+}
+
+.BarraL{
+    position: absolute;
+    left: 1225px;
+    top: 69px;
+    background-color: #F39D38;
+    width: 100px;
+    height: 589px;
+}
+
+.img1{
+    position: absolute;
+    top: 50px;
+    left: 23px;
+    width: 58px;
+    height: 59.21px;
+}
+
+.img2{
+    position: absolute;
+    top: 150px;
+    left: 23px;
+    width: 58px;
+    height: 55.35px;
+}
+
+.img3{
+    position: absolute;
+    top: 250px;
+    left: 23px;
+    width: 58px;
+    height: 59.21px;
+}
+
+.img4{
+    position: absolute;
+    top: 350px;
+    left: 21px;
+    width: 63px;
+    height: 68px;
+  }
+
+
+.img5{
+    position: absolute;
+    top: 470px;
+    left: 15px;
+    width:70px;
+    height:63px;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}

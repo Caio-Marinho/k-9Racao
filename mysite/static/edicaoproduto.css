@@ -1,0 +1,193 @@
+
+.titulo {
+    display: flex;
+    background-color: #ffffff;
+    width: 1350px;
+    position: absolute;
+    top: 0px;
+    left: 1px;
+    border-bottom: 2px gray solid;
+}
+
+h2{
+margin-left: 20px;
+}
+
+.titulo .canto{    
+margin-left:940px;
+}
+
+
+ul{
+    list-style-type: none;  
+}
+
+.BarraL{
+    position: absolute;
+    left: 1250px;
+    top: 69px;
+    background-color: #F39D38;
+    width: 100px;
+    height: 589px;
+  
+}
+
+
+.img1{
+    position: absolute;
+    top: 50px;
+    left: 23px;
+    width: 58px;
+    height: 59.21px;
+}
+
+.img2{
+    position: absolute;
+    top: 150px;
+    left: 23px;
+    width: 58px;
+    height: 55.35px;
+}
+
+.img3{
+    position: absolute;
+    top: 250px;
+    left: 23px;
+    width: 58px;
+    height: 59.21px;
+}
+
+.img4{
+    position: absolute;
+    top: 350px;
+    left: 21px;
+    width: 63px;
+    height: 68px;
+  }
+
+
+.img5{
+    position: absolute;
+    top: 470px;
+    left: 15px;
+    width:70px;
+    height:63px;
+}
+
+
+.Nome{
+    position: absolute;
+    top: 110px;
+    left: 50x;
+}
+
+.nomeproduto{
+    background-color: gray;
+    border-radius: 5px;
+    width: 250px;
+} 
+
+
+.Descrição{
+    position: absolute;
+    top: 108px;
+    left: 400px;
+}
+
+.desc{
+    background-color: gray;
+    border-radius: 5px;
+    width: 250px;
+} 
+
+.Categoria{
+    position: absolute;
+    top: 255px;
+    left: 400px;
+}
+
+.catego{
+    background-color: gray;
+    border-radius: 5px;
+    width: 250px;
+} 
+
+.Preço{
+    position: absolute;
+    top: 423px;
+    left: 400px;
+}
+
+.precoproduto{
+    background-color: gray;
+    border-radius: 5px;
+    width: 250px;
+  
+    
+}
+
+.Tipo{
+    position: absolute;
+    top: 425px;
+}
+
+.quilo{
+    background-color: gray;
+    border-radius: 5px;
+    width: 250px;
+} 
+
+
+.Estoque_Quantidade{
+   position: absolute;
+   top: 255px
+}
+.quant {
+    background-color: gray;
+    border-radius: 5px;
+    width: 250px;
+} 
+
+
+.IMAGEM{
+    background-color: rgba(243, 157, 56, 35%) ;
+    width: 250px;
+    height: 300px;
+    border-radius: 10px;
+    position: absolute;
+    top: 120px;
+    left: 850px;
+}
+
+
+.Botoes{
+ padding-left:250px;
+ width: 40x;
+ height: 200px;
+ padding-top: 600px;
+ position: absolute;
+ left: -170px
+}
+
+.Cancelar{
+    font-size: x-large;
+    background-color: gray;
+    border-width: 0px;
+    width: 230px;
+    height: 55px;
+    border-radius: 6px;
+   margin-right: 40px;
+}
+
+.Salvar{
+    font-size: x-large;
+    background-color: #F39D38;
+    border-width: 0px;
+    width: 230px;
+    height: 55px;
+    border-radius: 6px;
+    
+    
+}
+
+
