@@ -1,6 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import func
-from flask import Flask, request, render_template,json
+from flask import Flask, request, render_template, jsonify
 from datetime import datetime,date
 import os
 import time
@@ -36,7 +36,8 @@ class login(db.Model):
 class loja_racao(db.Model):
     cnpj = db.Column(db.String(18),primary_key=True)
     telefone = db.Column(db.String(45), nullable=False)
-    horario = db.Column(db.Time, nullable=False)
+    Abertura = db.Column(db.Time, nullable=False)
+    Fechamento = db.Column(db.Time, nullable=False)
     enderecos = db.relationship('endereço', cascade='all,delete' ,backref='loja_racao', lazy=True)
 
     def to_json(self):
@@ -145,15 +146,15 @@ def principal():
 
 @app.route('/acrecentar')
 def adicionar():
-    return render_template('adcionarproduto.html')
+    return render_template('adicionarproduto.html')
 
 @app.route('/editar')
 def edicao():
-    return render_template('editarproduto.html')
+    return render_template('edicaoproduto.html')
 
 @app.route('/sobre')
 def sobreproduto():
-    return render_template('sobreproduto.html')
+    return render_template('Sobreproduto.html')
 
 @app.route('/estoque')
 def estoque():
