@@ -1,0 +1,228 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.titulo {
+    display: flex;
+    background-color: #e0dfdf81;
+    border-bottom: 2px gray solid;
+}
+
+h1{
+margin-left: 10px;
+}
+
+.titulo .canto {    
+ margin-left: 1550px;
+}
+
+ul {
+    text-align: center;
+    float: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 150px;
+    background-color: #f39d38;
+  }
+  
+  li a {
+    display: block;
+    color: #000;
+    padding: 46.4px 10px;
+    text-decoration: none;
+  }
+  
+  li a.active {
+    background-color: #f39d38;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: orange;
+  }
+
+  .img1{
+    width: 78px;
+    height: 79.21px;
+}
+
+.img2{
+    width: 78px;
+    height: 75.35px;
+}
+
+.img3{
+    width: 78px;
+    height: 79.21px;
+}
+
+.img4{
+    width: 83px;
+height: 88px;
+  }
+
+  .img5{
+    width: 90px;
+    height: 83px;
+  }
+
+.menu{
+    margin-top: 50px;
+    margin-left: 50px;
+    
+}
+
+.menu .form-select{
+    margin-left: 120px;
+}
+.produto{
+    margin-top: 10px;
+    margin-left: 40px;
+    font-size: large;
+    width: 400px;
+    height: 72px;
+    position: absolute;
+    left: 10px;
+ }
+.produto h2{
+    background-color: #D9D9D9;
+    border-width: 0;
+    border-radius: 6px;
+    display: block;
+    color: #000;
+    text-decoration: none;
+    padding: 10px;
+ }
+
+ .Linhas{
+    border-left: 6px solid #2D3142;
+    height: 45px;
+    position: absolute;
+    margin-top: -70px;
+    margin-left: 310px;
+}
+.qtd{
+    position: absolute;
+    margin-top: -75px;
+    margin-left: 345px;
+}
+
+.LinhaCentral{
+    border-left: 6px solid #848383;
+    height: 830px;
+    position: absolute;
+    top: 130px;
+    left: 600px;
+}
+
+.backgroundx{
+    background-color: rgba(243, 157, 56, 35%) ;
+    width: 425px;
+    height: 326px;
+    border-radius: 10px;
+    position: absolute;
+    top: 130px;
+    left: 680px;
+}
+
+.Descricao{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: absolute;
+    top: 130px;
+    left: 700px;
+}
+
+
+.backgroundx1{
+    background-color: rgba(243, 157, 56, 35%) ;
+    position: absolute;
+    width: 425px;
+    height: 116px;
+    left: 680px;
+    top: 485px;
+    border-radius: 10px;
+
+}
+
+.Descricao1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: absolute;
+    top: 480px;
+    left: 700px;
+}
+
+.backgroundx2{
+    position: absolute;
+    width: 425px;
+    height: 116px;
+    left: 680px;
+    top: 630px;
+    background: #FBDDBA;
+    border-radius: 10px;
+}
+
+.Descricao2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: absolute;
+    top: 620px;
+    left: 700px;
+}
+
+.botoes1{
+    position: absolute;
+    width: 682.33px;
+    height: 73.99px;
+    left: 812px;
+    top: 850px;
+    
+}
+.excluir{
+    font-size: large;
+    width: 300px;
+    height: 72px;
+    position: absolute;
+    right: -100px;
+    background-color: #F39D38;
+    border-width: 0;
+    border-radius: 6px;
+}
+.excluir a{
+    display: block;
+    color: #000;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.editar{
+    font-size: large;
+    width: 300px;
+    height: 72px;
+    position: absolute;
+    left: 10px;
+    background-color: #F39D38;
+    border-width: 0;
+    border-radius: 6px;
+}
+.editar a{
+    display: block;
+    color: #000;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.backgroundx3{
+    background: #FBDDBA;
+    border-radius: 10px;
+    position: absolute;
+    width: 359.39px;
+    height: 401px;
+    left: 1250px;
+    top: 130px;
+}
+
+.Descricao3{
+    position: absolute;
+    top: 215px;
+    left: 1315px;
+}
