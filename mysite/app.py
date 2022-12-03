@@ -153,10 +153,6 @@ def principal():
     else:
         return redirect(url_for('login_usuario'))
 
-@app.route('/Vendas')
-def vendas():
-    return render_template('telainicial.html')
-
 @app.route('/acrecentar')
 def adicionar():
     return render_template('adicionarproduto.html')
