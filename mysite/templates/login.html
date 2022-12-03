@@ -15,20 +15,22 @@
         </div>
 
         <div id="login">
-            <form class="card">
+            <form action='/principal' class="card">
 
                 <div class="card-content">
                     <div class="card-content-area">
-                        <input type="text" id="usuario" autocomplete="off"  placeholder="Usuário">
+                        <input type="text" name='usuario' id="usuario" autocomplete="off"  placeholder="Usuário">
                     </div>
 
                     <div class="card-content-area">
-                        <input type="password" id="password" autocomplete="off"  placeholder="Senha">
+                        <input type="password" name='password' id="password" autocomplete="off"  placeholder="Senha">
                     </div>
 
                 </div>
-                <div class="card-footer">               
-                    <a class="button" href="/principal" name="Login">Entrar</a>
+                <div  class="card-footer">
+                    <button type'submit'>               
+                         Entrar
+                    </button>
                 </div>
 
             </form>
