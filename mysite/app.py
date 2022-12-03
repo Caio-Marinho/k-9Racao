@@ -135,19 +135,7 @@ class forma_pag_comp(db.Model):
         return {"id_forma_pag_comp":self.id_forma_pag_comp,"tipo":self.tipo,"valor":self.valor,"compras_id_compra":self.compras_id_compra,
         "compras_produtos_id_produto":self.compras_produtos_id_produto,"compras_fornecedores_cnpj":self.compras_fornecedores_cnpj}
 
-
-@app.route('/busca')
-def busca():
-    try:
-        acesso = login.query.all()
-        Usuario = []
-        for user in acesso:
-            Usuario.append((user.usuario,user.senha))
-        return str(Usuario[0][0])
-    except:
-        return str(Usuario[0][0])
-
-@app.route('/', methods = ['GET','POST'])
+@app.route('/')
 def login_usuario():
     return render_template('login.html')
 
@@ -164,6 +152,10 @@ def principal():
                 return redirect(url_for('login_usuario'))
     else:
         return redirect(url_for('login_usuario'))
+
+@app.route('/Vendas')
+def vendas():
+    return render_template('telainicial.html')
 
 @app.route('/acrecentar')
 def adicionar():
