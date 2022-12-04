@@ -137,20 +137,26 @@ class forma_pag_comp(db.Model):
 
 @app.route('/')
 def login_usuario():
-    return render_template('login.html')
+        return render_template('login.html')
 
 @app.route('/principal', methods = ['GET','POST'])
 def principal():
     if request.method == 'POST':
+        try:
             usuario = request.form['usuario']
             senha = request.form['password']
             acesso = login.query.filter_by(usuario=usuario,senha=sqlalchemy.func.md5(senha)).first()
             if acesso:
                 return render_template('telainicial.html')
             else:
-                return redirect(url_for('login_usuario'))
+                return render_template('login.html',mensagem='SENHA OU USUÁRIO INCORRETO')
+        except:
+            return redirect(url_for('login_usuario'))
     else:
-        return render_template('telainicial.html')
+        try:
+            return render_template('telainicial.html')
+        except:
+            return render_template('telainicial.html')
 
 @app.route('/acrecentar')
 def adicionar():
