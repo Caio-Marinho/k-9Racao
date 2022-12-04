@@ -151,7 +151,7 @@ def principal():
             else:
                 return redirect(url_for('login_usuario'))
     else:
-        return redirect(url_for('login_usuario'))
+        return render_template('telainicial.html')
 
 @app.route('/acrecentar')
 def adicionar():
