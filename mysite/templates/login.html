@@ -4,9 +4,9 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport"content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="https://o.remove.bg/downloads/4dbbaa31-210a-4460-881b-9c6ed1525bf3/image-removebg-preview.png">
+        <link rel="icon" href="../static/imgs/logo_cropped.png">
         <link rel="stylesheet" href="../static/login.css">
-        <title>Login</title>
+        <title>K-9 Rações</title>
     </head>
     <body>
       
@@ -15,20 +15,22 @@
         </div>
 
         <div id="login">
-            <form class="card">
+            <form action='/principal' method='POST' class="card">
 
                 <div class="card-content">
                     <div class="card-content-area">
-                        <input type="text" id="usuario" autocomplete="off"  placeholder="Usuário">
+                        <input type="text" name='usuario' id="usuario" autocomplete="off"  placeholder="Usuário">
                     </div>
 
                     <div class="card-content-area">
-                        <input type="password" id="password" autocomplete="off"  placeholder="Senha">
+                        <input type="password" name='password' id="password" autocomplete="off"  placeholder="Senha">
                     </div>
 
                 </div>
                 <div class="card-footer">               
-                    <a class="button" href="/principal" name="Login">Entrar</a>
+                    <button type ='submit' class="button">
+                        Entrar
+                    </button>
                 </div>
 
             </form>
