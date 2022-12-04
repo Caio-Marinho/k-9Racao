@@ -1,9 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-<<<<<<< HEAD
 import sqlalchemy
-=======
-from sqlalchemy import func
->>>>>>> e6452c2cc106c77376477854009e57e88da312e8
 from flask import Flask, request, render_template,json,redirect,url_for
 from datetime import datetime,date
 import os
@@ -148,14 +144,8 @@ def principal():
     if request.method == 'POST':
             usuario = request.form['usuario']
             senha = request.form['password']
-<<<<<<< HEAD
             acesso = login.query.filter_by(usuario=usuario,senha=sqlalchemy.func.md5(senha)).first()
             if acesso:
-=======
-            acesso = login.query.filter_by(usuario=usuario).first()
-            senhas = login.query.filter_by(senha=func.md5(senha)).first()
-            if acesso and senhas:
->>>>>>> e6452c2cc106c77376477854009e57e88da312e8
                 return render_template('telainicial.html')
             else:
                 return redirect(url_for('login_usuario'))
