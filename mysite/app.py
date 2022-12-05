@@ -166,11 +166,11 @@ def principal():
 def adicionar():
     return render_template('adicionarproduto.html')
 
-@app.route('/editar')
+@app.route('/estoque/editar')
 def edicao():
     return render_template('edicaoproduto.html')
 
-@app.route('/sobre')
+@app.route('/estoque/sobre')
 def sobreproduto():
     return render_template('Sobreproduto.html')
 
