@@ -1,6 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 import sqlalchemy
-from flask import Flask, request, render_template,json,redirect,url_for
+from flask import Flask, request, render_template,json,redirect,url_for,flash
 from datetime import datetime,date
 import os
 import time
@@ -139,7 +139,7 @@ class forma_pag_comp(db.Model):
 def login_usuario():
     return render_template('login.html')
 
-@app.route('/entrar', methods = ['GET','POST'])
+@app.route('/login', methods = ['GET','POST'])
 def entrar():
     if request.method == 'POST':
         try:
@@ -149,9 +149,9 @@ def entrar():
             if acesso:
                 return redirect(url_for('principal'))
             else:
-                return redirect(url_for('login_usuario'))
+                return render_template('login.html', mensagem='SENHA OU USUÁRIO INCORRETO')
         except:
-            return redirect(url_for('login_usuario'))
+            return render_template('login.html', mensagem='FALHA NA CONEXÃO')
     else:
         try:
             return redirect(url_for('login_usuario'))
