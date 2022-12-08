@@ -1,20 +1,220 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 
 .titulo {
     display: flex;
+    align-items: center;
+   
+    justify-content: space-between;
     background-color: #ffffff;
-    width: 1350px;
+    width: 100%;
+    height: 60px;
+    box-shadow: 0px 0px 5px #3d3838 ;
+}
+
+
+
+.titulo .title-header h2{
+    text-transform: capitalize;
+    font-family: sans-serif;
+    margin: 0px 50px 0px 50px;
+}
+
+#edit{
+   
+    height: 90vh;
+}
+
+#edit .container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+   
+}
+
+#edit .container .edit-form form .inputs{
+  display: flex;
+  align-items: center;
+  margin: 0px 200px 50px 0px;
+
+}
+
+#edit .container .edit-form form .inputs .imagem{
+    width: 230px;
+    height: 280px;
+   
+    margin: 0px  0px 0px 200px;
+    border: #141414 solid 2px;
+
+    
+    
+}
+
+#edit .container .edit-form form .inputs .fileimg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#edit .container .edit-form{
+    margin: 0px 0px 0px 0px;
+}
+
+#edit .container .edit-form form .buttons{
+   text-align: center;
+   width: 660px;
+   display: flex;
+   align-items: center;
+   margin-top: 150px;
+   justify-content: center;
+  
+ 
+   
+}
+
+#edit .container .edit-form form .buttons button:nth-child(1){
+    background-color: #d9d9d9bb;
+    color: #141414c2;
+    text-transform: capitalize;
+    padding: 6px 40px 6px 40px;
+    font-weight: 500;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    border: none;
+    border-radius: 7px;
+    margin: 0px 40px 0px 0px;
+    cursor: pointer;
+    transition: 400ms;
+    
+ }
+
+ #edit .container .edit-form form .buttons button:nth-child(1):hover{
+    background-color: #D9D9D9;
+    color: #141414;
+    text-transform: capitalize;
+    padding: 6px 40px 6px 40px;
+    font-weight: 500;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    border: none;
+    border-radius: 7px;
+   
+    cursor: pointer;
+     transition: 400ms;
+    
+ }
+ 
+#edit .container .edit-form form .buttons button:nth-child(2){
+    background-color: #f39c38a4;
+    color: #141414cc;
+    text-transform: capitalize;
+    font-weight: 500;
+    padding: 6px 40px 6px 40px;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 400ms;
+    
+ }
+
+ #edit .container .edit-form form .buttons button:nth-child(2):hover{
+    background-color: #F39D38;
+    color: #141414;
+    text-transform: capitalize;
+    font-weight: 500;
+    padding: 6px 40px 6px 40px;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 400ms;
+    
+ }
+
+#edit .container .edit-form form .dados{
+    margin: 0px 10px 0px 20px;
+}
+
+#edit .container .edit-form form .dados .input-form{
+    margin: 40px 0px 0px 0px;
+}
+
+#edit .container .edit-form form .dados .input-form .edit-name{
+    width: 17px;
+    height: 17px;
     position: absolute;
-    top: 0px;
-    left: 1px;
-    border-bottom: 2px gray solid;
+    top: 184px;
+    left: 400px;
 }
 
-h2{
-margin-left: 20px;
+#edit .container .edit-form form .dados .input-form .edit-price{
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    top: 290px;
+    left: 400px;
 }
 
-.titulo .canto{    
-margin-left:940px;
+#edit .container .edit-form form .dados .input-form .edit-tipo{
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    top: 395px;
+    left: 400px;
+}
+
+#edit .container .edit-form form .dados .input-form .edit-desc{
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    top: 184px;
+    left: 716px;
+}
+
+#edit .container .edit-form form .dados .input-form .edit-cat{
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    top: 293px;
+    left: 716px;
+}
+
+#edit .container .edit-form form .dados .input-form .edit-est{
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    top: 396px;
+    left: 716px;
+}
+
+
+#edit .container .edit-form form .dados .input-form label{
+    display: block;
+    margin: 0px 0px 7px 0px;
+    font-weight: 545;
+    font-family: sans-serif;
+    color: #757575;
+}
+
+#edit .container .edit-form form .dados .input-form input{
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    width: 280px;
+    height: 40px;
+    padding: 0px 0px 0px 10px;
+    background-color: #D9D9D9;
 }
 
 
@@ -24,12 +224,12 @@ ul{
 
 .BarraL{
     position: absolute;
-    left: 1250px;
-    top: 69px;
+    left: 1416px;
+    top: 60px;
     background-color: #F39D38;
     width: 100px;
     height: 589px;
-  
+    padding-top: 57px;
 }
 
 
@@ -94,11 +294,7 @@ ul{
     left: 400px;
 }
 
-.desc{
-    background-color: gray;
-    border-radius: 5px;
-    width: 250px;
-} 
+
 
 .Categoria{
     position: absolute;
@@ -156,7 +352,7 @@ ul{
     border-radius: 10px;
     position: absolute;
     top: 120px;
-    left: 850px;
+    left: 950px;
 }
 
 
@@ -189,5 +385,3 @@ ul{
     
     
 }
-
-

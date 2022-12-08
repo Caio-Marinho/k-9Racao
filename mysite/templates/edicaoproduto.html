@@ -10,10 +10,14 @@
 </head>
 
 <body>
-    <div class="titulo">
+    <header class="titulo">
+       <div class="title-header">
         <h2>Edição de Produto</h2> 
-        <h2 class="canto">Usuário Logado</h2>
-    </div>
+       </div>
+       <div class="title-header">
+        <h2>Usuário Logado</h2>
+       </div>
+    </header>
    
 <div class="BarraL">
     <ul>
@@ -26,100 +30,87 @@
     </ul>
 </div>
 
-     <div class="Nome">
-        <h3>
-            Nome:
-        </h3>
-         
-        <h3>
-            <input class="nomeproduto" type="text" name="Nome do Produto" id="">
-        </h3>
+<section id="edit">
+   
+    <div class="container">
+
+        <div class="edit-form">
+          
+            <form action="/update/id" method="post">
+               
+                <div class="inputs">
+                    <div class="dados">
+                  
+                        <div class="input-form">
+                           <label for="name">Nome:</label>
+                           <input type="text-file" class="name" name="name" placeholder="Nome do produto" autocomplete="off" required>
+                           <img src="img/edit.png" alt="icon-edit" class="edit-name">
+                        </div>
        
-     </div>
-    
-<div class="Descrição">
-    <h3>
-        Descrição:
-    </h3>
-    
-    
-    <h3>
-        <input class="desc" type="text" name="Descrição" id="">
-    </h3>
-
-</div>
-  
-
-<div class="Preço">
-    <h3>
-        Preço:
-    </h3>
-
-
-    <h3>
-        <input class="precoproduto" type="text" name="Preço do produto" id="">
-    </h3>
-   
-</div>
-
-    
-<div class="Categoria">
-    <h3>
-        Categoria:
-    </h3>
-      
-    
-    
-    <h3>
-        <input class="catego" type="text" name="Categoria" id="">
-    </h3>
+                        <div class="input-form">
+                           <label for="price">Preço:</label>
+                           <input type="text" value="20,00" class="price" name="price" placeholder="Preço do produto" autocomplete="off" required>
+                           <img src="img/edit.png" alt="icon-edit" class="edit-price">
+                           
+                        </div>
        
+                        <div class="input-form">
+                           <label for="tipo">Tipo:</label>
+                           <input type="text" class="tipo" name="tipo" autocomplete="off" required>
+                           <img src="img/edit.png" alt="icon-edit" class="edit-tipo">
+                           
+                        </div>
+       
+                       </div>
+       
+                       <div class="dados">
+                         
+                           <div class="input-form">
+                              <label for="desc">Descrição:</label>
+                              <input type="text" class="desc" name="desc" placeholder="Descrição" autocomplete="off" required>
+                              <img src="img/edit.png" alt="icon-edit" class="edit-desc">
+                           </div>
+          
+                           <div class="input-form">
+                              <label for="cat">Categoria:</label>
+                              <input type="text" class="categoria" name="categoria" autocomplete="off" required>
+                              <img src="img/edit.png" alt="icon-edit" class="edit-cat">
+                           </div>
+          
+                           <div class="input-form">
+                              <label for="est">Estoque:</label>
+                              <input type="text" class="estoque" name="estoque" placeholder="Estoque" autocomplete="off" required>
+                               <img src="img/edit.png" alt="icon-edit" class="edit-est">
+                           </div>
+          
+                        </div>
+                    <div class="fileimg">
+                        <div class="imagem">
+                          
+           
+                            <input type="file">
+                        </div>
 
-</div>
-    
+                    </div>
+                        
+                        
+                </div>
 
-<div class="Tipo">
-    <h3>
-        Tipo:
-    </h3>
-   
+                 <div class="buttons">
+                     <button>cancelar</button>
+                     <button type="submit">salvar</button>
+                 </div>
+
+            </form>
 
 
-    <h3>
-        <input class="quilo" type="text" name="Quilo/Unidade" id="">
-    </h3>
-   
-</div>
-  
-<div class="Estoque_Quantidade">
-    <h3>
-        Estoque:
-    </h3>
-    
-    
-    <h3>
-        <input class="quant" type="text" name="Quantidade" id="Quantidade">
-    </h3>
+        </div>
 
-</div>
-    
+        
 
-<div class="IMAGEM">
-    
-   
-</div>
+    </div>
 
-<div class="Botoes">
-
-    <button class="Cancelar">
-        Cancelar
-    </button>
-    
-    <button class="Salvar">
-        Salvar
-    </button>
-
-</div>
+ </section>
 
 </body>
 </html>
