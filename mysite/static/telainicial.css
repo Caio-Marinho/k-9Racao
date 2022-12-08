@@ -71,10 +71,10 @@ height: 88px;
   
   .slds-p-top--medium{
     position: absolute;
-    width: 1000px;
+    width: 900px;
     height: 100px;
     right: 150px;
-    top: 150px;
+    top: 100px;
   }
   .quiz-chartTip {
     padding: 5px 10px;
