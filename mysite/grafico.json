@@ -1,21 +1,21 @@
 [
     {
-        "mês": "mês["0"](data)"
-        "valor" : "valor["0"](valor)"
+        "mês": mes(data)
+        "valor" : mes(valor)
     },{
-        "mês": "mes["1"](data)"
-        "valor" : "me["1"](valor)"
+        "mês": mes(data)
+        "valor" : mes(valor)
     },{
-        "mês": "mes["2"](data)"
-        "valor" : "me["2"](valor)"
+        "mês": mes(data)
+        "valor" : mes(valor)
     },{
-        "mês": "mes["3"](data)"
-        "valor" : "me["3"](valor)"
+        "mês": mes(data)
+        "valor" : mes(valor)
     },{
-        "mês": "mes["4"](data)"
-        "valor" : "me["4"](valor)"
+        "mês": mes(data)
+        "valor" : mes(valor)
     },{
-        "mês": "mes["5"](data)"
-        "valor" : "me["5"](valor)"
+        "mês": mes(data)
+        "valor" : mes(valor)
     },
 ]
