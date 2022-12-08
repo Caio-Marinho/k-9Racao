@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../static/imgs/logo_cropped.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/estoque.css">
     <title>K-9 Rações</title>
 </head>
@@ -26,138 +27,101 @@
 
 </ul>
 
-<div class="menu">
+<div class="row p-5">
+    <div class="col-4">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Pesquise por um item...">
+            <div>
+            <select class="form-select">
+                <option value="" disabled selected>Categorias</option>
+                <option value="Alimentos">Alimentos</option>
+                <option value="Higinene">Higiene</option>
+                <option value="Brinquedos">Brinquedos</option>
 
-    <input type="text" id="produto" autocomplete="off"  placeholder="nome do produto">
-        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-            <option selected>Categoria</option>
-            <option value="1">Higiene</option>
-            <option value="2">Alimento</option>
-            <option value="3">Brinquedos</option>
-          </select>
-    </div >
-    <div class="produto">
-    <h2>produto 1  </h2>
-    <div class="Linhas"></div>
-        <div class="qtd">
-         <P>21 </P></div>
-    <h2>produto 2  </h2>
-    <div class="Linhas"></div>
-        <div class="qtd">
-        <P>21 </P></div>
-    <h2>produto 3  </h2>
-    <div class="Linhas"></div>
-         <div class="qtd">
-        <P>21 </P>
+            </select>
+             </div>
         </div>
-    <h2>produto 4  </h2>
-    <div class="Linhas"></div>
-         <div class="qtd">
-        <P>21 </P>
-        </div>
-    <h2>produto 5  </h2>
-    <div class="Linhas"></div>
-        <div class="qtd">
-        <P>21 </P>
-         </div>
-    <h2>produto 6  </h2>
-    <div class="Linhas"></div>
-        <div class="qtd">
-        <P>21 </P>
+          <div class="items">
+              <div class="item">
+                <p>Nome do produto</p>
+                <div class="barra"></div>
+                <p>R$ 22,95</p>
+              </div>
+          </div>
+    <div class="col-8">
+        
+    <div class="LinhaCentral">
     </div>
-    <h2>produto 7  </h2>
-    <div class="Linhas"></div>
-        <div class="qtd">
-        <P>21 </P>
-        </div>
-    <h2>produto 8  </h2>
-    <div class="Linhas"></div>
-          <div class="qtd">
-          <P>12 </P>
-            </div>
-    <h2>produto 9  </h2>
-    <div class="Linhas"></div>
-            <div class="qtd">
-            <P>12 </P>
-            </div>
-    <h2>produto 10  </h2>
-    <div class="Linhas"></div>
-            <div class="qtd">
-            <P>12 </P>
-            </div>
-                                   
-
-</div>
+    
+    <div class="backgroundx">
     </div>
-</div>
-<div class="LinhaCentral">
-</div>
-
-<div class="backgroundx">
-</div>
-
-
-<div class="Descricao">
     
-    <h4>
-    Descrição: <br>
-
-    <br>
-    <br>
-    Lorem ipsum dolor sit amet. laoreet quis Cras quis<br>
-     Mauris libero Cras quis libero, Cras quis diam.<br>
-    laoreet quis mattis in, sagittis a  at interdum <br>
-    Nullam at interdum Lorem  laoreet laoreet quis mat <br>
-    erat.  Mauris libero Cras Lorem ipsum dolo mattis<br>
-    Cras quis diam nisl. at interdum Aenean. psum<br>
-    Lorem  laoreet quis ipsum dolor sit amet. sag<br>
-
-    </h4>
-</div>
-<div class="backgroundx1">
-</div>
-
-<div class="Descricao1">
     
-    <h4>
-    Preço:<br>
-    <br>
-    <R1>7,00</R1>
+    <div class="Descricao">
+        
+        <h5>
+        Descrição: <br>
+    
+        <br>
+        <br>
+        Lorem ipsum dolor sit amet. laoreet<br>
+         Mauris libero Cras quis libero,<br>
+        laoreet quis mattis in, sagittis a<br>
+        Nullam at interdum Lorem  laoreet la<br>
+        erat.  Mauris libero Cras Lorem ip<br>
+        Cras quis diam nisl. at interdum.<br>
+        Lorem  laoreet quis ipsum dolor sit<br>
+    
+        </h5>
+    </div>
+
+    <div class="backgroundx1">
+    </div>
+    
+    <div class="Descricao1">
+        
+        <h5>
+        Preço:<br>
+        <br>
+        <R1>7,00</R1>
+        </H5>
+    
+    </div>
+    
+    <div class="backgroundx2">
+    </div>
+    
+    <div class="Descricao2">
+        
+        <h5>
+        Quantidade:<br>
+        <br>
+    <p>57 unidades</p>
+        </H5>
+    </div>
+    
+    <div class="botoes1">
+        <button class="excluir">
+            <a href="/estoque/editar">Editar</a> 
+        </button>
+    
+        <button class="editar">
+           <a href="/estoque/sobre">Sobre</a> 
+        </button>
+    </div>
+    
+    <div class="backgroundx3">
+    </div>
+    
+    <div class="Descricao3">
+    
+    <img src="../static/imgs/racao.jpg" alt="">
+    </div>
+
+    </div>             
+</div>
     
 
-</div>
-
-<div class="backgroundx2">
-</div>
-
-<div class="Descricao2">
-    
-    <h4>
-    Quantidade:<br>
-    <br>
-<p>57 unidades</p>
-
-</div>
-
-<div class="botoes1">
-    <button class="excluir">
-        <a href="/estoque/editar">Editar</a> 
-    </button>
-
-    <button class="editar">
-       <a href="/estoque/sobre">Sobre</a> 
-    </button>
-</div>
-
-<div class="backgroundx3">
-</div>
-
-<div class="Descricao3">
-
-<img src="../static/imgs/racao.jpg" alt="">
-
-</div>
-
-
+<script src="https://kit.fontawesome.com/e1314ff6bd.js" crossorigin="anonymous"></script>
 </body>
 </html>
