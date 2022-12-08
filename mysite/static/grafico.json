@@ -1,0 +1,21 @@
+[
+    {
+        "mês": "janeiro",
+        "valor" : 10
+    },{
+        "mês": "Fevereiro",
+        "valor" : 5
+    },{
+        "mês": "Março",
+        "valor" : 2
+    },{
+        "mês": "Abril",
+        "valor" : 4
+    },{
+        "mês": "Maio",
+        "valor" : 3
+    },{
+        "mês": "Junho",
+        "valor" : 6
+    }
+]
