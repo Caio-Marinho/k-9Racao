@@ -1,0 +1,21 @@
+[
+    {
+        "mês": grafico(),
+        "valor" : grafico()
+    },{
+        "mês": grafico(),
+        "valor" : grafico()
+    },{
+        "mês": grafico(),
+        "valor" : grafico()
+    },{
+        "mês": grafico(),
+        "valor" : grafico()
+    },{
+        "mês": grafico(),
+        "valor" : grafico()
+    },{
+        "mês": grafico(),
+        "valor" : grafico()
+    }
+]
