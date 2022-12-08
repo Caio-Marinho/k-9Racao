@@ -1,9 +1,12 @@
 from flask_sqlalchemy import SQLAlchemy
 import sqlalchemy
+from sqlalchemy.orm import sessionmaker
 from flask import Flask, request, render_template,json,redirect,url_for,flash
 from datetime import datetime,date
 import os
 import time
+import pygal
+import json
 
 os.environ["TZ"] = "America/Recife"
 time.tzset()
@@ -13,6 +16,9 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://K9Racao:projeto2022@K9Racao.mysql.pythonanywhere-services.com/K9Racao$default'
 db = SQLAlchemy(app)
+engine = sqlalchemy.create_engine('mysql://K9Racao:projeto2022@K9Racao.mysql.pythonanywhere-services.com/K9Racao$default')
+Session = sessionmaker(bind=engine)
+session = Session()
 
 class funcionario(db.Model):
     cpf = db.Column(db.String(14),primary_key=True)
@@ -160,6 +166,7 @@ def entrar():
 
 @app.route('/principal')
 def principal():
+
     return render_template('telainicial.html')
 
 @app.route('/acrecentar')
@@ -181,3 +188,11 @@ def estoque():
 @app.route('/registro')
 def registro():
     return render_template('registro-venda.html')
+
+@app.route('/consulta')
+def consulta():
+    result = session.execute('SELECT current_date - 6MONTH;')
+    resultado = []
+    for consulta in result:
+        resultado.append((consulta))
+    return str(resultado)
