@@ -72,8 +72,8 @@ height: 88px;
   .slds-p-top--medium{
     position: absolute;
     width: 1000px;
-    height:1000px;
-    right: 150px;
+    height:700px;
+    right: 300px;
     top: 160px;
   }
   .quiz-chartTip {
