@@ -1,9 +1,21 @@
 [
     {
-        "mês": 
-        "valor" : 
-    },
-    {
-        
+        "mês": mes1(data)'
+        "valor" : mes1(valor)
+    },{
+        "mês": mes2(data)
+        "valor" : mes2(valor)
+    },{
+        "mês": mes3(data)
+        "valor" : mes3(valor)
+    },{
+        "mês": mes4(data)
+        "valor" : mes4(valor)
+    },{
+        "mês": mes5(data)
+        "valor" : mes5(valor)
+    },{
+        "mês": mes6(data)
+        "valor" : mes6(valor)
     }
 ]
