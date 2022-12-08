@@ -18,26 +18,4 @@
         "mês": "Junho",
         "valor" : 6
     }
-=======
-[
-    {
-        "mês": grafico(),
-        "valor" : grafico()
-    },{
-        "mês": grafico(),
-        "valor" : grafico()
-    },{
-        "mês": grafico(),
-        "valor" : grafico()
-    },{
-        "mês": grafico(),
-        "valor" : grafico()
-    },{
-        "mês": grafico(),
-        "valor" : grafico()
-    },{
-        "mês": grafico(),
-        "valor" : grafico()
-    }
->>>>>>> 67ab5097a10f7db04c4b8bcec08bc22ca6ca89c4
 ]
