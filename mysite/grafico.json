@@ -1,21 +1,21 @@
 [
     {
-        "mês": mes(data)
-        "valor" : mes(valor)
+        "mês": grafico(),
+        "valor" : grafico()
     },{
-        "mês": mes(data)
-        "valor" : mes(valor)
+        "mês": grafico(),
+        "valor" : grafico()
     },{
-        "mês": mes(data)
-        "valor" : mes(valor)
+        "mês": grafico(),
+        "valor" : grafico()
     },{
-        "mês": mes(data)
-        "valor" : mes(valor)
+        "mês": grafico(),
+        "valor" : grafico()
     },{
-        "mês": mes(data)
-        "valor" : mes(valor)
+        "mês": grafico(),
+        "valor" : grafico()
     },{
-        "mês": mes(data)
-        "valor" : mes(valor)
-    },
+        "mês": grafico(),
+        "valor" : grafico()
+    }
 ]
