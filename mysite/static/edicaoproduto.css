@@ -155,7 +155,7 @@
     height: 17px;
     position: absolute;
     top: 184px;
-    left: 400px;
+    left: 30px;
 }
 
 #edit .container .edit-form form .dados .input-form .edit-price{
@@ -163,7 +163,7 @@
     height: 17px;
     position: absolute;
     top: 290px;
-    left: 400px;
+    left: 30px;
 }
 
 #edit .container .edit-form form .dados .input-form .edit-tipo{
@@ -171,7 +171,7 @@
     height: 17px;
     position: absolute;
     top: 395px;
-    left: 400px;
+    left: 30px;
 }
 
 #edit .container .edit-form form .dados .input-form .edit-desc{
@@ -179,7 +179,7 @@
     height: 17px;
     position: absolute;
     top: 184px;
-    left: 716px;
+    left: 355px;
 }
 
 #edit .container .edit-form form .dados .input-form .edit-cat{
@@ -187,7 +187,7 @@
     height: 17px;
     position: absolute;
     top: 293px;
-    left: 716px;
+    left: 355px;
 }
 
 #edit .container .edit-form form .dados .input-form .edit-est{
@@ -195,7 +195,7 @@
     height: 17px;
     position: absolute;
     top: 396px;
-    left: 716px;
+    left: 355px;
 }
 
 
