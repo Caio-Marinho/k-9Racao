@@ -1,7 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 import sqlalchemy
 from sqlalchemy.orm import sessionmaker
-from flask import Flask, request, render_template,json,redirect,url_for,flash
+from flask import Flask, request, render_template,redirect,url_for,flash
 from datetime import datetime,date
 import os
 import time
@@ -84,12 +84,15 @@ class venda(db.Model):
 
 class produto(db.Model):
     id_produto = db.Column(db.Integer,primary_key=True)
+    cod_barra = db.Column(db.BigInteger,nullable=False)
     nome = db.Column(db.String(45),nullable=False)
     quantidade = db.Column(db.Numeric(6,2),nullable=False)
     categoria = db.Column(db.String(45),nullable=False)
+    tipo = db.Column(db.String(45),nullable=False)
+    descricao = db.Column(db.String(45),nullable=False)
     marca = db.Column(db.String(45),nullable=False)
     valor = db.Column(db.Numeric(6,2),nullable=False)
-    validade = db.Column(db.Date,nullable=False)
+    validade = db.Column(db.Date)
     itens = db.relationship('itens_venda', cascade='all,delete' ,backref='produto', lazy=True)
     compras = db.relationship('compras', cascade='all,delete' ,backref='produto', lazy=True)
     pagamentos = db.relationship('forma_pag_comp', cascade='all,delete' ,backref='produto', lazy=True)
@@ -143,7 +146,12 @@ class forma_pag_comp(db.Model):
 
 @app.route('/')
 def login_usuario():
-    return render_template('login.html')
+    try:
+        session.execute("SET lc_time_names = 'pt_BR';")
+        return render_template('login.html')
+    except:
+        return render_template('login.html')
+
 
 @app.route('/login', methods = ['GET','POST'])
 def entrar():
@@ -153,6 +161,7 @@ def entrar():
             senha = request.form['password']
             acesso = login.query.filter_by(usuario=usuario,senha=sqlalchemy.func.md5(senha)).first()
             if acesso:
+                session.execute("SET lc_time_names = 'pt_BR';")
                 return redirect(url_for('principal'))
             else:
                 return render_template('login.html', mensagem='SENHA OU USUÁRIO INCORRETO')
@@ -166,8 +175,26 @@ def entrar():
 
 @app.route('/principal')
 def principal():
-
-    return render_template('telainicial.html')
+    try:
+        session.execute("SET lc_time_names = 'pt_BR';")
+        consulta=session.execute("select MONTHNAME(data) as 'data',sum(valor) as'valor' from compras"
+        "where data <= date_add(current_date,interval -6 MONTH) group by data;")
+        resultado = []
+        for c in consulta:
+            resultado.append({'mes':str(c.data),'valor':float(c.valor)})
+        with open ('mysite/static/grafico.json','w') as grafico:
+            json.dump(resultado,grafico,indent=2)
+        with open('mysite/static/grafico.json','r') as grafico:
+            vendas = json.load(grafico)
+        chart = pygal.Line()
+        lista = [x['valor'] for x in vendas]
+        chart.add('Vendas',lista)
+        chart.x_labels = [x['mes'] for x in vendas]
+        chart.render_to_file('mysite/static/imgs/grafico.svg')
+        img_url = 'mysite/static/imgs/grafico.svg?cache=' + str(time.time())
+        return render_template('telainicial.html',image_url=img_url)
+    except:
+        return redirect(url_for('login_usuario'))
 
 @app.route('/acrecentar')
 def adicionar():
@@ -191,8 +218,9 @@ def registro():
 
 @app.route('/consulta')
 def consulta():
-    result = session.execute('SELECT current_date - 6MONTH;')
+    session.execute("SET lc_time_names = 'pt_BR';")
+    consulta=session.execute("select MONTHNAME(data) as 'data',sum(valor) as'valor' from compras where data <= date_add(current_date,interval -6 MONTH) group by data;")
     resultado = []
-    for consulta in result:
-        resultado.append((consulta))
+    for c in consulta:
+        resultado.append({'mês':str(c.data),'valor':int(c.valor)})
     return str(resultado)
