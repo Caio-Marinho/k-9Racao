@@ -146,12 +146,7 @@ class forma_pag_comp(db.Model):
 
 @app.route('/')
 def login_usuario():
-    try:
-        session.execute("SET lc_time_names = 'pt_BR';")
-        return render_template('login.html')
-    except:
-        return render_template('login.html')
-
+    return render_template('login.html')
 
 @app.route('/login', methods = ['GET','POST'])
 def entrar():
@@ -161,7 +156,6 @@ def entrar():
             senha = request.form['password']
             acesso = login.query.filter_by(usuario=usuario,senha=sqlalchemy.func.md5(senha)).first()
             if acesso:
-                session.execute("SET lc_time_names = 'pt_BR';")
                 return redirect(url_for('principal'))
             else:
                 return render_template('login.html', mensagem='SENHA OU USUÁRIO INCORRETO')
@@ -177,7 +171,7 @@ def entrar():
 def principal():
     try:
         session.execute("SET lc_time_names = 'pt_BR';")
-        consulta=session.execute("select MONTHNAME(data) as 'data',sum(valor) as'valor' from compras"
+        consulta=session.execute("select MONTHNAME(data) as 'data',sum(valor) as'valor' from compras "
         "where data <= date_add(current_date,interval -6 MONTH) group by data;")
         resultado = []
         for c in consulta:
@@ -196,9 +190,39 @@ def principal():
     except:
         return redirect(url_for('login_usuario'))
 
-@app.route('/acrecentar')
+@app.route('/acrecentar', methods = ['GET','POST'])
 def adicionar():
     return render_template('adicionarproduto.html')
+
+@app.route('/inserir', methods = ['GET','POST'])
+def inserir():
+    if request.method == 'POST':
+        try:
+            nome=request.form['Nome']
+            preco = request.form['Preco']
+            tipo = request.form['Tipo']
+            desc = request.form['Desc']
+            categoria = request.form['Categoria']
+            estoque = request.form['Estoque']
+            confirm = produto.query.filter_by(nome=nome).first()
+            if confirm:
+                ver=session.execute("SELECT * FROM produto WHERE nome='"+nome+"';").fetchall()
+                db.session.execute("UPDATE produto SET quantidade =",estoque,'+',ver[0][3]," WHERE nome='"+nome+"';")
+                db.session.execute("UPDATE produto SET categoria='"+categoria+"',tipo='"+tipo+"',valor=",preco,"WHERE nome='"+nome+"';" )
+                db.session.commit()
+                return redirect(url_for('adicionar'))
+            else:
+                novo = produto(cod_barra=cod,nome=nome,quantidade=estoque,categoria=categoria,tipo=tipo,descricao=desc,marca=marca,valor=preco,validade=validade)
+                db.session.add(novo)
+                db.session.commit()
+                return redirect(url_for('adicionar'))
+        except:
+            return redirect(url_for('adicionar'))
+    else:
+        try:
+            return redirect(url_for('adicionar'))
+        except:
+            return redirect(url_for('adicionar'))
 
 @app.route('/estoque/editar')
 def edicao():
@@ -219,8 +243,6 @@ def registro():
 @app.route('/consulta')
 def consulta():
     session.execute("SET lc_time_names = 'pt_BR';")
-    consulta=session.execute("select MONTHNAME(data) as 'data',sum(valor) as'valor' from compras where data <= date_add(current_date,interval -6 MONTH) group by data;")
-    resultado = []
-    for c in consulta:
-        resultado.append({'mês':str(c.data),'valor':int(c.valor)})
-    return str(resultado)
+    consulta=session.execute("select MONTHNAME(data) as 'data',sum(valor) as'valor' from compras where data "
+    "<= date_add(current_date,interval -6 MONTH) group by data;").fetchall()
+    return str(consulta)
