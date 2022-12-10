@@ -56,13 +56,13 @@
                   </tr>
                 </thead>
                 <tbody>
-                <tr>
                     {% for extrato in consulta %}
+                <tr>
                         <td>{{extrato['dia']}}</td>
                         <td>{{extrato['Descrição']}}</td>
                         <td>{{extrato['valor']}}</td>
-                    {% endfor %}
                 </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
