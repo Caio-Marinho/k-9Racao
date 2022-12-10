@@ -33,7 +33,7 @@
                         <option value="2022">2022</option>
                     </select>
                     <select class="form-select" name="mes" id="mes" type="submit" onchange="this.form.submit()">
-                        <option value="1" onchange="this.form.submit()" >Janeiro</option>
+                        <option value="1" onchange="this.form.submit()" selected="true" >Janeiro</option>
                         <option value="2" >Fevereiro</option>
                         <option value="3" >Março</option>
                         <option value="4" >Abril</option>
@@ -69,5 +69,20 @@
         </div>
     </div>
 </form>
+<script type="text/javascript">
+    function selecionar(uf)
+    {
+        var combo = document.getElementById("combo");
+        
+        for (var i = 0; i < combo.options.length; i++)
+        {
+            if (combo.options[i].value == uf)
+            {
+                combo.options[i].selected = "true";
+                break;
+            }
+        }
+    }
+    </script>
 </body>
 </html>
