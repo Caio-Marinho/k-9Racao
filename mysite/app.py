@@ -1,7 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 import sqlalchemy
 from sqlalchemy.orm import sessionmaker
-from flask import Flask, request, render_template,json,redirect,url_for,flash
+from flask import Flask, request, render_template,redirect,url_for,flash
 from datetime import datetime,date
 import os
 import time
@@ -84,12 +84,15 @@ class venda(db.Model):
 
 class produto(db.Model):
     id_produto = db.Column(db.Integer,primary_key=True)
+    cod_barra = db.Column(db.BigInteger,nullable=False)
     nome = db.Column(db.String(45),nullable=False)
     quantidade = db.Column(db.Numeric(6,2),nullable=False)
     categoria = db.Column(db.String(45),nullable=False)
+    tipo = db.Column(db.String(45),nullable=False)
+    descricao = db.Column(db.String(45),nullable=False)
     marca = db.Column(db.String(45),nullable=False)
     valor = db.Column(db.Numeric(6,2),nullable=False)
-    validade = db.Column(db.Date,nullable=False)
+    validade = db.Column(db.Date)
     itens = db.relationship('itens_venda', cascade='all,delete' ,backref='produto', lazy=True)
     compras = db.relationship('compras', cascade='all,delete' ,backref='produto', lazy=True)
     pagamentos = db.relationship('forma_pag_comp', cascade='all,delete' ,backref='produto', lazy=True)
@@ -166,12 +169,60 @@ def entrar():
 
 @app.route('/principal')
 def principal():
+    try:
+        session.execute("SET lc_time_names = 'pt_BR';")
+        consulta=session.execute("select MONTHNAME(data) as 'data',sum(valor) as'valor' from compras "
+        "where data <= date_add(current_date,interval -6 MONTH) group by data;")
+        resultado = []
+        for c in consulta:
+            resultado.append({'mes':str(c.data),'valor':float(c.valor)})
+        with open ('mysite/static/grafico.json','w') as grafico:
+            json.dump(resultado,grafico,indent=2)
+        with open('mysite/static/grafico.json','r') as grafico:
+            vendas = json.load(grafico)
+        chart = pygal.Line()
+        lista = [x['valor'] for x in vendas]
+        chart.add('Vendas',lista)
+        chart.x_labels = [x['mes'] for x in vendas]
+        chart.render_to_file('mysite/static/imgs/grafico.svg')
+        img_url = 'mysite/static/imgs/grafico.svg?cache=' + str(time.time())
+        return render_template('telainicial.html',image_url=img_url)
+    except:
+        return redirect(url_for('login_usuario'))
 
-    return render_template('telainicial.html')
-
-@app.route('/acrecentar')
+@app.route('/acrecentar', methods = ['GET','POST'])
 def adicionar():
     return render_template('adicionarproduto.html')
+
+@app.route('/inserir', methods = ['GET','POST'])
+def inserir():
+    if request.method == 'POST':
+        try:
+            nome=request.form['Nome']
+            preco = request.form['Preco']
+            tipo = request.form['Tipo']
+            desc = request.form['Desc']
+            categoria = request.form['Categoria']
+            estoque = request.form['Estoque']
+            confirm = produto.query.filter_by(nome=nome).first()
+            if confirm:
+                ver=session.execute("SELECT * FROM produto WHERE nome='"+nome+"';").fetchall()
+                db.session.execute("UPDATE produto SET quantidade =",estoque,'+',ver[0][3]," WHERE nome='"+nome+"';")
+                db.session.execute("UPDATE produto SET categoria='"+categoria+"',tipo='"+tipo+"',valor=",preco,"WHERE nome='"+nome+"';" )
+                db.session.commit()
+                return redirect(url_for('adicionar'))
+            else:
+                novo = produto(cod_barra=cod,nome=nome,quantidade=estoque,categoria=categoria,tipo=tipo,descricao=desc,marca=marca,valor=preco,validade=validade)
+                db.session.add(novo)
+                db.session.commit()
+                return redirect(url_for('adicionar'))
+        except:
+            return redirect(url_for('adicionar'))
+    else:
+        try:
+            return redirect(url_for('adicionar'))
+        except:
+            return redirect(url_for('adicionar'))
 
 @app.route('/estoque/editar')
 def edicao():
@@ -191,8 +242,7 @@ def registro():
 
 @app.route('/consulta')
 def consulta():
-    result = session.execute('SELECT current_date - 6MONTH;')
-    resultado = []
-    for consulta in result:
-        resultado.append((consulta))
-    return str(resultado)
+    session.execute("SET lc_time_names = 'pt_BR';")
+    consulta=session.execute("select MONTHNAME(data) as 'data',sum(valor) as'valor' from compras where data "
+    "<= date_add(current_date,interval -6 MONTH) group by data;").fetchall()
+    return str(consulta)

@@ -25,34 +25,35 @@
         <li><a href="/registro"><img class="img5" src="../static/imgs/carrinho.png" alt=""></a></li>
     
     </ul>
+<form action="/inserir" method="POST">
     <div class="row">
         <div class="col-8 d-flex justify-content-center flex-column">
             <div class="d-flex justify-content-center">
                 <div class="m-5">
                     <div class="d-flex flex-column">
                         <label for="">Nome:</label>
-                        <input class="k9-input" type="text" placeholder="Nome do produto">
+                        <input class="k9-input" type="text" name="Nome" id="Nome" placeholder="Nome do produto">
                     </div>
                     <div class="d-flex flex-column">
                         <label for="">Preço:</label>
-                        <input class="k9-input" type="text" placeholder="Preço do produto">
+                        <input class="k9-input" type="text" name="Preco" id="Preco" placeholder="Preço do produto">
                     </div>
                     <div class="d-flex flex-column">
                         <label for="">Tipo:</label>
-                        <select class="form-select"name="" id="">
-                            <option value="">Quilo</option>
-                            <option value="">Unidade</option>
+                        <select class="form-select"name="Tipo" id="Tipo">
+                            <option value="KG">Quilo</option>
+                            <option value="UND">Unidade</option>
                         </select>
                     </div>
                 </div>
                 <div class="m-5">
                     <div class="d-flex flex-column">
                         <label for="">Descrição:</label>
-                        <input class="k9-input" type="text" placeholder="Descrição do produto">
+                        <input class="k9-input" type="text" name="Desc" id="Desc" placeholder="Descrição do produto">
                     </div>
                     <div class="d-flex flex-column">
                         <label for="">Categoria:</label>
-                        <select class="form-select"name="" id="">
+                        <select class="form-select"name="Categoria" id="Categoria">
                             <option value="Alimentos">Alimentos</option>
                             <option value="Higinene">Higiene</option>
                             <option value="Brinquedos">Brinquedos</option>
@@ -60,15 +61,16 @@
                     </div>
                     <div class="d-flex flex-column">
                         <label for="">Estoque:</label>
-                        <input class="k9-input" type="text" placeholder="Quantidade do produto">
+                        <input class="k9-input" type="text" name="Estoque" id="Estoque" placeholder="Quantidade do produto">
                     </div>
                 </div>
             </div>
             <div class="botoes m-5 d-flex justify-content-between">
-                <button class="btn btn-k9" style="background-color: #d9d9d9;">Cancelar</button>
-                <button class="btn btn-k9" style="background-color: #F39D38;">Salvar</button>
+                <button class="btn btn-k9" type="submit" style="background-color: #d9d9d9; formnovalidate">Cancelar</button>
+                <button class="btn btn-k9" type="submit" style="background-color: #F39D38;">Salvar</button>
             </div>
         </div>
+    </form>
         <div class="col-4 mt-5">
             <div class="d-flex flex-column">
                     <p>Adicionar imagem:</p>
