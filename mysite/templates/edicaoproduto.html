@@ -25,71 +25,73 @@
     
     </ul>
     <h1 class="mt-3" style="margin-left: 100px;">Nome do produto</h1>
-    <div class="row">
-        <div class="col-8 d-flex justify-content-center flex-column">
-            <div class="d-flex justify-content-center">
-                <div class="m-5">
-                    <div class="d-flex flex-column">
-                        <label for="">Nome:</label>
-                        <input class="k9-input" type="text" placeholder="Nome do produto">
+    <form action="/inserir" method="POST">
+        <div class="row">
+            <div class="col-8 d-flex justify-content-center flex-column">
+                <div class="d-flex justify-content-center">
+                    <div class="m-5">
+                        <div class="d-flex flex-column">
+                            <label for="">Nome:</label>
+                            <input class="k9-input" type="text" name="Nome" id="Nome" placeholder="Nome do produto">
+                        </div>
+                        <div class="d-flex flex-column">
+                            <label for="">Preço:</label>
+                            <input class="k9-input" type="text" name="Preco" id="Preco" placeholder="Preço do produto">
+                        </div>
+                        <div class="d-flex flex-column">
+                            <label for="">Tipo:</label>
+                            <select class="form-select"name="" id="">
+                                <option value="KG">Quilo</option>
+                                <option value="UND.">Unidade</option>
+                            </select>
+                        </div>
+                        <div style="display: flex; flex-direction: column;">
+                            <label for="">Marca:</label>
+                            <input type="text" class="k9-input" name="Marca" id="Marca" placeholder="Marca do produto">
+                        </div>
                     </div>
-                    <div class="d-flex flex-column">
-                        <label for="">Preço:</label>
-                        <input class="k9-input" type="text" placeholder="Preço do produto">
-                    </div>
-                    <div class="d-flex flex-column">
-                        <label for="">Tipo:</label>
-                        <select class="form-select"name="" id="">
-                            <option value="">Quilo</option>
-                            <option value="">Unidade</option>
-                        </select>
-                    </div>
-                    <div style="display: flex; flex-direction: column;">
-                        <label for="">Marca:</label>
-                        <input type="text" class="k9-input" placeholder="Marca do produto">
+                    <div class="m-5">
+                        <div class="d-flex flex-column">
+                            <label for="">Descrição:</label>
+                            <input class="k9-input" type="text" name="Desc" id="Desc" placeholder="Descrição do produto">
+                        </div>
+                        <div class="d-flex flex-column">
+                            <label for="">Categoria:</label>
+                            <select class="form-select"name="Categoria" id="Categoria">
+                                <option value="Alimentos">Alimentos</option>
+                                <option value="Higinene">Higiene</option>
+                                <option value="Brinquedos">Brinquedos</option>
+                            </select>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <label for="">Estoque:</label>
+                            <input class="k9-input" type="text" name="Estoque" id="Estoque" placeholder="Quantidade do produto">
+                        </div>
+                        <div style="display: flex; flex-direction: column;">
+                            <label for="">Validade:</label>
+                            <input type="date" class="k9-input" name="validade" id="validade" placeholder="Marca do produto">
+                        </div>
                     </div>
                 </div>
-                <div class="m-5">
-                    <div class="d-flex flex-column">
-                        <label for="">Descrição:</label>
-                        <input class="k9-input" type="text" placeholder="Descrição do produto">
-                    </div>
-                    <div class="d-flex flex-column">
-                        <label for="">Categoria:</label>
-                        <select class="form-select"name="" id="">
-                            <option value="Alimentos">Alimentos</option>
-                            <option value="Higinene">Higiene</option>
-                            <option value="Brinquedos">Brinquedos</option>
-                        </select>
-                    </div>
-                    <div class="d-flex flex-column">
-                        <label for="">Estoque:</label>
-                        <input class="k9-input" type="text" placeholder="Quantidade do produto">
-                    </div>
-                    <div style="display: flex; flex-direction: column;">
-                        <label for="">Validade:</label>
-                        <input type="date" class="k9-input" placeholder="Marca do produto">
-                    </div>
+                <div class="botoes m-5 d-flex justify-content-around">
+                    <button class="btn btn-k9" style="background-color: #d9d9d9;">Cancelar</button>
+                    <button class="btn btn-k9" style="background-color: #F39D38;">Salvar</button>
                 </div>
             </div>
-            <div class="botoes m-5 d-flex justify-content-around">
-                <button class="btn btn-k9" style="background-color: #d9d9d9;">Cancelar</button>
-                <button class="btn btn-k9" style="background-color: #F39D38;">Salvar</button>
+            <div class="col-4 mt-5">
+                <div class="d-flex flex-column">
+                        <p>Editar imagem:</p>
+                        <label class="label-file"for="arquivo">
+                            <img class="mt-3" src="https://cdn-icons-png.flaticon.com/128/3524/3524388.png" alt="">
+                        </label>
+                        <input class="input-file" type="file" name="arquivo" id="arquivo">
+                        <div class="d-flex flex-column mt-4" style="width:200px;">
+                            <label>Código do produto:</label>
+                            <input type="text" class="k9-input" name="Cod_barra" id="Cod_barra" placeholder="Código de barras"">
+                        </div>
+                </div>
             </div>
         </div>
-        <div class="col-4 mt-5">
-            <div class="d-flex flex-column">
-                    <p>Editar imagem:</p>
-                    <label class="label-file"for="arquivo">
-                        <img class="mt-3" src="https://cdn-icons-png.flaticon.com/128/3524/3524388.png" alt="">
-                    </label>
-                    <input class="input-file" type="file" name="arquivo" id="arquivo">
-                    <div class="d-flex flex-column mt-4" style="width:200px;">
-                        <label>Código do produto:</label>
-                        <input type="text" class="k9-input" placeholder="Código de barras"">
-                    </div>
-            </div>
-        </div>
-    </div>
+    </form> 
 </body>
 </html>
