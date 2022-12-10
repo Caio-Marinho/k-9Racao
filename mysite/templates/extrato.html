@@ -22,7 +22,7 @@
         <li><a href="/registro"><img class="img5" src="../static/imgs/carrinho.png" alt=""></a></li>
     
     </ul>
-<form action='/extrato' method='GET'>
+<form action='/extrato' method='POST'>
     <div class="row">
         <div class="col-12">
             <div class="m-4 d-flex justify-content-between">
@@ -33,7 +33,7 @@
                     </select>
                     <select class="form-select" name="mes" id="mes" onchange="this.form.submit()">
                         <option value="1" >Janeiro</option>
-                        <option value="2" >Fevereiro</option>
+                        <option value="2" onchange="this.form.submit()">Fevereiro</option>
                         <option value="3" >Março</option>
                         <option value="4" >Abril</option>
                         <option value="5" >Maio</option>
