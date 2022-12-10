@@ -54,21 +54,21 @@
                   </tr>
                 </thead>
                 <tbody>
+                    {% for d in dia %}
                     <tr>
-                        {% for d in dia %}
                         <td>{{d}}</td>
-                        {% endfor %}
                     </tr>
+                    {% endfor %}
+                    {% for D in Descricao %}
                     <tr>
-                        {% for D in Descricao %}
                         <td>{{D}}</td>
-                        {% endfor%}
                     </tr>
+                    {% endfor%}
+                    {% for v in valor %}
                     <tr> 
-                        {% for valor in valor %}
                         <td>{{v}}</td>
-                        {% endfor %}
                     </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
