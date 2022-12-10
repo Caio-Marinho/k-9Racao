@@ -1,387 +1,66 @@
 *{
-    margin: 0;
-    padding: 0;
+    font-family: Verdana;
+    margin:  0px;
+    padding: 0px;
 }
 
-.titulo {
+
+ .titulo {
     display: flex;
-    align-items: center;
-   
     justify-content: space-between;
     background-color: #ffffff;
     width: 100%;
-    height: 60px;
-    box-shadow: 0px 0px 5px #3d3838 ;
+    border-bottom: 2px gray solid;
+}
+.btn-k9 {
+    width: 250px;
+    height: 80px;
+    font-weight: bold;
+    font-size: larger;
+}
+.k9-input{
+    height: 39px;
+    border-radius: 0.375rem;
+    border: 1px solid #ced4da;
 }
 
-
-
-.titulo .title-header h2{
-    text-transform: capitalize;
-    font-family: sans-serif;
-    margin: 0px 50px 0px 50px;
-}
-
-#edit{
-   
-    height: 90vh;
-}
-
-#edit .container{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10rem;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    height: 600px;
-   
-}
-
-#edit .container .edit-form form .inputs{
-  display: flex;
-  align-items: center;
-  margin: 0px 200px 50px 0px;
-
-}
-
-#edit .container .edit-form form .inputs .imagem{
-    width: 230px;
-    height: 280px;
-   
-    margin: 0px  0px 0px 200px;
-    border: #141414 solid 2px;
-
-    
-    
-}
-
-#edit .container .edit-form form .inputs .fileimg {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
-}
-
-#edit .container .edit-form{
-    margin: 0px 0px 0px 0px;
-}
-
-#edit .container .edit-form form .buttons{
-   text-align: center;
-   width: 660px;
-   display: flex;
-   align-items: center;
-   margin-top: 150px;
-   justify-content: center;
+ul {
+    text-align: center;
+    float: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 150px;
+    background-color: #f39d38;
+  }
   
- 
-   
-}
-
-#edit .container .edit-form form .buttons button:nth-child(1){
-    background-color: #d9d9d9bb;
-    color: #141414c2;
-    text-transform: capitalize;
-    padding: 6px 40px 6px 40px;
-    font-weight: 500;
-    font-size: 1.2rem;
-    font-family: sans-serif;
-    border: none;
-    border-radius: 7px;
-    margin: 0px 40px 0px 0px;
-    cursor: pointer;
-    transition: 400ms;
-    
- }
-
- #edit .container .edit-form form .buttons button:nth-child(1):hover{
-    background-color: #D9D9D9;
-    color: #141414;
-    text-transform: capitalize;
-    padding: 6px 40px 6px 40px;
-    font-weight: 500;
-    font-size: 1.2rem;
-    font-family: sans-serif;
-    border: none;
-    border-radius: 7px;
-   
-    cursor: pointer;
-     transition: 400ms;
-    
- }
- 
-#edit .container .edit-form form .buttons button:nth-child(2){
-    background-color: #f39c38a4;
-    color: #141414cc;
-    text-transform: capitalize;
-    font-weight: 500;
-    padding: 6px 40px 6px 40px;
-    font-size: 1.2rem;
-    font-family: sans-serif;
-    border: none;
-    border-radius: 7px;
-    cursor: pointer;
-    transition: 400ms;
-    
- }
-
- #edit .container .edit-form form .buttons button:nth-child(2):hover{
-    background-color: #F39D38;
-    color: #141414;
-    text-transform: capitalize;
-    font-weight: 500;
-    padding: 6px 40px 6px 40px;
-    font-size: 1.2rem;
-    font-family: sans-serif;
-    border: none;
-    border-radius: 7px;
-    cursor: pointer;
-    transition: 400ms;
-    
- }
-
-#edit .container .edit-form form .dados{
-    margin: 0px 10px 0px 20px;
-}
-
-#edit .container .edit-form form .dados .input-form{
-    margin: 40px 0px 0px 0px;
-}
-
-#edit .container .edit-form form .dados .input-form .edit-name{
-    width: 17px;
-    height: 17px;
-    position: absolute;
-    top: 184px;
-    left: 30px;
-}
-
-#edit .container .edit-form form .dados .input-form .edit-price{
-    width: 17px;
-    height: 17px;
-    position: absolute;
-    top: 290px;
-    left: 30px;
-}
-
-#edit .container .edit-form form .dados .input-form .edit-tipo{
-    width: 17px;
-    height: 17px;
-    position: absolute;
-    top: 395px;
-    left: 30px;
-}
-
-#edit .container .edit-form form .dados .input-form .edit-desc{
-    width: 17px;
-    height: 17px;
-    position: absolute;
-    top: 184px;
-    left: 355px;
-}
-
-#edit .container .edit-form form .dados .input-form .edit-cat{
-    width: 17px;
-    height: 17px;
-    position: absolute;
-    top: 293px;
-    left: 355px;
-}
-
-#edit .container .edit-form form .dados .input-form .edit-est{
-    width: 17px;
-    height: 17px;
-    position: absolute;
-    top: 396px;
-    left: 355px;
-}
-
-
-#edit .container .edit-form form .dados .input-form label{
+  li a {
     display: block;
-    margin: 0px 0px 7px 0px;
-    font-weight: 545;
-    font-family: sans-serif;
-    color: #757575;
-}
-
-#edit .container .edit-form form .dados .input-form input{
-    outline: none;
-    border: none;
-    border-radius: 6px;
-    width: 280px;
-    height: 40px;
-    padding: 0px 0px 0px 10px;
-    background-color: #D9D9D9;
-}
-
-
-ul{
-    list-style-type: none;  
-}
-
-.BarraL{
-    position: absolute;
-    left: 1416px;
-    top: 60px;
-    background-color: #F39D38;
-    width: 100px;
-    height: 589px;
-    padding-top: 57px;
-}
-
-
-.img1{
-    position: absolute;
-    top: 50px;
-    left: 23px;
-    width: 58px;
-    height: 59.21px;
-}
-
-.img2{
-    position: absolute;
-    top: 150px;
-    left: 23px;
-    width: 58px;
-    height: 55.35px;
-}
-
-.img3{
-    position: absolute;
-    top: 250px;
-    left: 23px;
-    width: 58px;
-    height: 59.21px;
-}
-
-.img4{
-    position: absolute;
-    top: 350px;
-    left: 21px;
-    width: 63px;
-    height: 68px;
+    color: #000;
+    padding: 46.4px 10px;
+    text-decoration: none;
+  }
+  
+  li a.active {
+    background-color: #f39d38;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: orange;
   }
 
-
-.img5{
-    position: absolute;
-    top: 470px;
-    left: 15px;
-    width:70px;
-    height:63px;
+  .input-file {
+    display: none;
 }
-
-
-.Nome{
-    position: absolute;
-    top: 110px;
-    left: 50x;
-}
-
-.nomeproduto{
-    background-color: gray;
-    border-radius: 5px;
-    width: 250px;
-} 
-
-
-.Descrição{
-    position: absolute;
-    top: 108px;
-    left: 400px;
-}
-
-
-
-.Categoria{
-    position: absolute;
-    top: 255px;
-    left: 400px;
-}
-
-.catego{
-    background-color: gray;
-    border-radius: 5px;
-    width: 250px;
-} 
-
-.Preço{
-    position: absolute;
-    top: 423px;
-    left: 400px;
-}
-
-.precoproduto{
-    background-color: gray;
-    border-radius: 5px;
-    width: 250px;
-  
-    
-}
-
-.Tipo{
-    position: absolute;
-    top: 425px;
-}
-
-.quilo{
-    background-color: gray;
-    border-radius: 5px;
-    width: 250px;
-} 
-
-
-.Estoque_Quantidade{
-   position: absolute;
-   top: 255px
-}
-.quant {
-    background-color: gray;
-    border-radius: 5px;
-    width: 250px;
-} 
-
-
-.IMAGEM{
-    background-color: rgba(243, 157, 56, 35%) ;
-    width: 250px;
-    height: 300px;
-    border-radius: 10px;
-    position: absolute;
-    top: 120px;
-    left: 950px;
-}
-
-
-.Botoes{
- padding-left:250px;
- width: 40x;
- height: 200px;
- padding-top: 600px;
- position: absolute;
- left: -170px
-}
-
-.Cancelar{
-    font-size: x-large;
-    background-color: gray;
-    border-width: 0px;
-    width: 230px;
-    height: 55px;
-    border-radius: 6px;
-   margin-right: 40px;
-}
-
-.Salvar{
-    font-size: x-large;
-    background-color: #F39D38;
-    border-width: 0px;
-    width: 230px;
-    height: 55px;
-    border-radius: 6px;
-    
-    
+.label-file {
+    padding: 20px 10px;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(243, 157, 56, 0.35);
+    color: #FFF;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    cursor: pointer;
 }

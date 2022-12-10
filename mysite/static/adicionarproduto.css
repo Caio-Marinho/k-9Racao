@@ -1,66 +1,67 @@
 * {
-    font-family: Verdana;
-    margin: 0px;
-    padding: 0px;
+  font-family: Verdana;
+  margin: 0px;
+  padding: 0px;
 }
 
 .btn-k9 {
-    width: 250px;
-    height: 80px;
-    font-weight: bold;
+  width: 250px;
+  height: 80px;
+  font-weight: bold;
+  font-size: larger;
 }
 
 .titulo {
-    display: flex;
-    justify-content: space-between;
-    background-color: #ffffff;
-    width: 100%;
-    border-bottom: 2px gray solid;
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  width: 100%;
+  border-bottom: 2px gray solid;
 }
 
 .k9-input{
-    height: 39px;
-    border-radius: 0.375rem;
-    border: 1px solid #ced4da;
+  height: 39px;
+  border-radius: 0.375rem;
+  border: 1px solid #ced4da;
 }
 
 .input-file {
-    display: none;
+  display: none;
 }
 .label-file {
-    padding: 20px 10px;
-    width: 200px;
-    height: 200px;
-    background-color: rgba(243, 157, 56, 0.35);
-    color: #FFF;
-    text-transform: uppercase;
-    text-align: center;
-    display: block;
-    margin-top: 10px;
-    cursor: pointer;
+  padding: 20px 10px;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(243, 157, 56, 0.35);
+  color: #FFF;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
 ul {
-    text-align: center;
-    float: right;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 150px;
-    background-color: #f39d38;
-  }
-  
-  li a {
-    display: block;
-    color: #000;
-    padding: 46.4px 10px;
-    text-decoration: none;
-  }
-  
-  li a.active {
-    background-color: #f39d38;
-  }
-  
-  li a:hover:not(.active) {
-    background-color: orange;
-  }
+  text-align: center;
+  float: right;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  background-color: #f39d38;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 46.4px 10px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #f39d38;
+}
+
+li a:hover:not(.active) {
+  background-color: orange;
+}
