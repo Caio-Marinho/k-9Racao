@@ -23,7 +23,6 @@
         <li><a href="/registro"><img class="img5" src="../static/imgs/carrinho.png" alt=""></a></li>
     
     </ul>
-<form action='/extrato' method='POST'>
     <div class="row">
         <div class="col-12">
             <div class="m-4 d-flex justify-content-between">
@@ -48,6 +47,9 @@
                     </select>
                 </div>
             </div>
+        <form action='/extrato' method='POST'>
+            <head>
+            <meta http-equiv="refresh" content="2; https://k9racao.pythonanywhere.com/extrato">
             <table class="table table-bordered table-hover table-sm tb">
                 <thead>
                   <tr>
@@ -66,8 +68,9 @@
                     {% endfor %}
                 </tbody>
             </table>
+        </form>
+        </head>
         </div>
     </div>
-</form>
 </body>
 </html>
