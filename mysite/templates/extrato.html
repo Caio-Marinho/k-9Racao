@@ -58,9 +58,9 @@
                 <tbody>
                     {% for extrato in consulta %}
                 <tr>
-                        <td>{{extrato['dia']}}</td>
-                        <td>{{extrato['Descrição']}}</td>
-                        <td>{{extrato['valor']}}</td>
+                        <td>{{extrato.data}}</td>
+                        <td>{{extrato.quantida}}</td>
+                        <td>{{extrato.valor}}</td>
                 </tr>
                     {% endfor %}
                 </tbody>
