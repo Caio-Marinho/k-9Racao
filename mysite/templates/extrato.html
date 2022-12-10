@@ -26,7 +26,7 @@
         <li><a href="/registro"><img class="img5" src="../static/imgs/carrinho.png" alt=""></a></li>
     
     </ul>
-<form action='/extrato' method='POST'>
+<form id="extrato" action='/extrato' method='POST'>
     <div class="row">
         <div class="col-12">
             <div class="m-4 d-flex justify-content-between">
@@ -73,7 +73,7 @@
     </div>
 </form>
 <script type="text/javascript">
-    $(document).on("submit","mes",function(e)
+    $(document).on("submit","extrato",function(e)
                    {
       e.preventDefault();
       $.ajax({
