@@ -54,10 +54,20 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>02/03/2022</td>
-                        <td>Ração tal</td>
-                        <td>12,00</td>
-                      </tr>
+                        {% for d in dia %}
+                        <td>{{d}}</td>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        {% for D in Descricao %}
+                        <td>{{D}}</td>
+                        {% endfor%}
+                    </tr>
+                    <tr> 
+                        {% for valor in valor %}
+                        <td>{{v}}</td>
+                        {% endfor %}
+                    </tr>
                 </tbody>
             </table>
         </div>
