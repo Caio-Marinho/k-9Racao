@@ -1,0 +1,44 @@
+*{
+    font-family: Verdana;
+    margin:  0px;
+    padding: 0px;
+}
+
+
+ .titulo {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+    width: 100%;
+    border-bottom: 2px gray solid;
+}
+
+.tb {
+    border: solid 5px gray;
+    border-radius: 4px;
+}
+
+ul {
+    text-align: center;
+    float: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 150px;
+    background-color: #f39d38;
+  }
+  
+  li a {
+    display: block;
+    color: #000;
+    padding: 46.4px 10px;
+    text-decoration: none;
+  }
+  
+  li a.active {
+    background-color: #f39d38;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: orange;
+  }

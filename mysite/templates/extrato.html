@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>02/03/2022</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/extrato.css">
+</head>
+
+<body>
+    <div class="titulo">
+        <h2>Extrato</h2> 
+        <h2 class="canto">Usuário Logado</h2>
+    </div>
+    <ul>
+        <li><a href="../templates/estoque.html"><img class="img1" src="estoque.png" alt=""></a></li>
+        <li><a class="active" href="../templates/telainicial.html"><img class="img2" src="vendas.png" alt=""></a></li>
+        <li><a href="../templates/edicaoproduto.html"><img class="img3" src="editar.png" alt=""></a></li>
+        <li><a href="../templates/"><img class="img4" src="extrato.png" alt=""></a></li>
+        <li><a href="#about"><img class="img5" src="carrinho.png" alt=""></a></li>
+    </ul>
+    <div class="row">
+        <div class="col-12">
+            <div class="m-4 d-flex justify-content-between">
+                <h3>Vendas {{Mês Atual}}</h3>
+                <div class="d-flex justify-content-between" style="width: 400px;">
+                    <select class="form-select" name="ano" id="ano">
+                        <option value="2022">2022</option>
+                    </select>
+                    <select class="form-select" name="mes" id="mes">
+                        <02/03/2022value="2">Fevereiro</option>
+                        <option value="3">Março</option>
+                        <option value="4">Abril</option>
+                        <option value="5">Maio</option>
+                        <option value="6">Junho</option>
+                        <option value="7">Julho</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Setembro</option>
+                        <option value="10">Outubro</option>
+                        <option value="11">Novembro</option>
+                        <option value="12">Dezembro</option>
+                    </select>
+                </div>
+            </div>
+            <table class="table table-bordered table-hover table-sm tb">
+                <thead>
+                  <tr>
+                    <th>Data</th>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>02/03/2022</td>
+                        <td>Ração tal</td>
+                        <td>12,00</td>
+                      </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
