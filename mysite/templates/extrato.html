@@ -55,14 +55,10 @@
                 </thead>
                 <tbody>
                     <tr>
-                    {% for d in dia %}
-                        <td>{{d}}</td>
-                    {% endfor %}
-                    {% for D in Descricao %}
-                        <td>{{D}}</td>
-                    {% endfor%}
-                    {% for v in valor %}
-                        <td>{{v}}</td>
+                    {% for extrato in consulta %}
+                        <td>{{extrato['dia']}}</td>
+                        <td>{{extrato['Descrição']}}</td>
+                        <td>{{extrato['valor']}}</td>
                     {% endfor %}
                 </tr>
                 </tbody>
