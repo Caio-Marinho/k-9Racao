@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../static/extrato.css">
 </head>
 
-<body >
+<body onload="selecionar('mes')">
     <div class="titulo">
         <h2>Extrato</h2> 
         <h2 class="canto">Usuário Logado</h2>
@@ -72,18 +72,18 @@
 <script type="text/javascript">
     function selecionar(uf)
     {
-        var combo = document.getElementById("mes");
+        var mes = document.getElementById("mes");
         
-        for (var i = 0; i < combo.options.length; i++)
+        for (var i = 0; i < mes.options.length; i++)
         {
-            if (combo.options[i].value == uf)
+            if (mes.options[i].value == uf)
             {
-                combo.options[i].selected = "true";
+                mes.options[i].selected = "true";
                 break;
             }
             else
             {
-                combo.options[i].selected = "false";
+                mes.options[i].selected = "false";
                 continue;
             }
         }
