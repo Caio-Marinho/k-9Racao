@@ -37,7 +37,7 @@
                     <select class="form-select" name="ano" id="ano">
                         <option value="2022">2022</option>
                    </select>
-                    <select class="form-select" name="mes" id="mes">
+                    <select class="form-select" name="mes" id="mes" href="javascript::" onclick="extrato('/extrato')">
                         <option value="1" onchange="this.form.submit()">Janeiro</option>
                         <option value="2" onchange="this.form.submit()">Fevereiro</option>
                         <option value="3" onchange="this.form.submit()">Março</option>
@@ -75,16 +75,18 @@
     </div>
 </form>
 <script type="text/javascript">
-    $(document).on('submit', '#extrato', function (e) {
-        e.preventDefault();
-        $.ajax({
-            type: 'POST',
-            url: '/extrato',
-            data: {
-                mes: $("#mes").val()
-            }
-        })
-    });
+    function extrato(dados){
+        if (dados){
+            $.ajax({
+                type:'POST',
+                data: dados,
+                url:dados,
+                sucess : function(date){
+                    $("#Retorno").html(date);
+                }
+            });
+        }
+    }
 </script>
 </body>
 </html>
