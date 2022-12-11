@@ -7,11 +7,6 @@
     <link rel="icon" href="../static/imgs/logo_cropped.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-          integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-          crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../static/extrato.css">
 </head>
 
@@ -28,7 +23,7 @@
         <li><a href="/registro"><img class="img5" src="../static/imgs/carrinho.png" alt=""></a></li>
     
     </ul>
-<form action="/extrato" method='POST' id='extrato'>
+<form action="/extrato" method='POST' id="extrato">
     <div class="row">
         <div class="col-12">
             <div class="m-4 d-flex justify-content-between">
@@ -37,19 +32,19 @@
                     <select class="form-select" name="ano" id="ano">
                         <option value="2022">2022</option>
                    </select>
-                    <select class="form-select" name="mes" id="mes" href="javascript::" onclick="extrato('/extrato')">
-                        <option value="1" >Janeiro</option>
-                        <option value="2" >Fevereiro</option>
-                        <option value="3" >Março</option>
-                        <option value="4" >Abril</option>
-                        <option value="5" >Maio</option>
-                        <option value="6" >Junho</option>
-                        <option value="7" >Julho</option>
-                        <option value="8" >Agosto</option>
-                        <option value="9" >Setembro</option>
-                        <option value="10" >Outubro</option>
-                        <option value="11" >Novembro</option>
-                       <option value="12" >Dezembro</option>
+                    <select class="form-select" name="mes" id="mes" onchange="this.form.submit()">
+                        <option value="1">Janeiro</option>
+                        <option value="2">Fevereiro</option>
+                        <option value="3">Março</option>
+                        <option value="4">Abril</option>
+                        <option value="5">Maio</option>
+                        <option value="6">Junho</option>
+                        <option value="7">Julho</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Setembro</option>
+                        <option value="10">Outubro</option>
+                        <option value="11">Novembro</option>
+                       <option value="12">Dezembro</option>
                     </select>
                 </div>
             </div>
@@ -74,19 +69,5 @@
         </div>
     </div>
 </form>
-<script type="text/javascript">
-    function extrato(dados){
-        if (dados){
-            $.ajax({
-                type:'POST',
-                data: dados,
-                url:dados,
-                sucess : function(date){
-                    $("#Retorno").html(date);
-                }
-            });
-        }
-    }
-</script>
 </body>
 </html>
