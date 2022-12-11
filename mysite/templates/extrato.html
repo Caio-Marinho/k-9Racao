@@ -23,7 +23,7 @@
         <li><a href="/registro"><img class="img5" src="../static/imgs/carrinho.png" alt=""></a></li>
     
     </ul>
-<form action='/extrato' method='POST'>
+<form class="extrato" action='/extrato' method='POST'>
     <div class="row">
         <div class="col-12">
             <div class="m-4 d-flex justify-content-between">
@@ -32,7 +32,7 @@
                     <select class="form-select" name="ano" id="ano">
                         <option value="2022">2022</option>
                    </select>
-                    <select class="form-select" name="mes" id="mes" onclick="selecionar()" onchange="this.form.submit()">
+                    <select class="form-select" name="mes" id="mes"  onchange="this.form.submit()">
                         <option value="1"selected="false">Janeiro</option>
                         <option value="2"selected="false">Fevereiro</option>
                         <option value="3"selected="false">Março</option>
@@ -70,19 +70,15 @@
     </div>
 </form>
 <script type="text/javascript">
-    function selecionar(uf)
-    {
-        var mes = document.getElementById("mes");
-        
-        for (var i = 0; i < mes.options.length; i++)
-        {
-            if (mes.options[i].value == uf)
-            {
-                mes.options[i].selected = "false";
-                break;
+    $(document).on('submit', '.extrato', function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: '/extrato',
+            data: {
+                mes: $(".form-select").val()
             }
-        }
-    }
-    </script>
+        })
+    });
 </body>
 </html>
