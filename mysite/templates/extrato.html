@@ -33,7 +33,7 @@
                         <option value="2022">2022</option>
                    </select>
                     <select class="form-select" name="mes" id="mes" onchange="this.form.submit()">
-                        <option value="1" selected>Janeiro</option>
+                        <option value="1" selected = ''>Janeiro</option>
                         <option value="2">Fevereiro</option>
                         <option value="3">Março</option>
                         <option value="4">Abril</option>
@@ -41,8 +41,8 @@
                         <option value="6">Junho</option>
                         <option value="7">Julho</option>
                         <option value="8">Agosto</option>
-                        <option value="9" onclick='selecionar()'>Setembro</option>
-                        <option value="10" onclick='selecionar()'>Outubro</option>
+                        <option value="9" onclick="selecionar('mes')" selected = ''>Setembro</option>
+                        <option value="10" onclick="selecionar('mes')" selected = ''>Outubro</option>
                         <option value="11">Novembro</option>
                        <option value="12">Dezembro</option>
                     </select>
