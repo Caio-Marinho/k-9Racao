@@ -170,8 +170,8 @@ def entrar():
 @app.route('/principal')
 def principal():
     try:
-        session.execute("SET lc_time_names = 'pt_BR';")
-        consulta=session.execute("select MONTHNAME(data) as 'data',sum(valor) as'valor' from compras "
+        db.session.execute("SET lc_time_names = 'pt_BR';")
+        consulta=db.session.execute("select MONTHNAME(data) as 'data',sum(valor) as'valor' from compras "
         "where data <= date_add(current_date,interval -6 MONTH) group by data;")
         resultado = []
         for c in consulta:
@@ -192,39 +192,36 @@ def principal():
 
 @app.route('/acrecentar', methods = ['GET','POST'])
 def adicionar():
-    return render_template('adicionarproduto.html')
-
-@app.route('/inserir', methods = ['GET','POST'])
-def inserir():
     if request.method == 'POST':
-        try:
-            nome=request.form['Nome']
+            cod = request.form['Barra']
+            nome = request.form['Nome']
             preco = request.form['Preco']
             tipo = request.form['Tipo']
             desc = request.form['Desc']
+            marca = request.form['Marca']
             categoria = request.form['Categoria']
             estoque = request.form['Estoque']
-            confirm = produto.query.filter_by(nome=nome).first()
+            validade = request.form['Validade']
+            confirm = produto.query.filter_by(cod_barra=cod).first()
             if confirm:
-                ver=session.execute("SELECT * FROM produto WHERE nome='"+nome+"';").fetchall()
-                db.session.execute("UPDATE produto SET quantidade =",estoque,'+',ver[0][3]," WHERE nome='"+nome+"';")
-                db.session.execute("UPDATE produto SET categoria='"+categoria+"',tipo='"+tipo+"',valor=",preco,"WHERE nome='"+nome+"';" )
+                ver=db.session.execute("SELECT quantidade FROM produto WHERE cod_barra= "+cod+";").fetchall()
+                db.session.execute("UPDATE produto SET quantidade = "+str(estoque)+" + "+str(ver[0][0])+" WHERE cod_barra= "+cod+";")
+                db.session.execute("UPDATE produto SET categoria='"+categoria+"',tipo='"+tipo+"',valor="+preco+" WHERE cod_barra= "+cod+";" )
+                db.session.execute("UPDATE produto SET validade='"+validade+"',marca='"+marca+"', nome='"+nome+"' WHERE cod_barra= "+cod+";" )
                 db.session.commit()
-                return redirect(url_for('adicionar'))
+                return render_template('adicionarproduto.html',alerta="Produto já cadatrado, dados atualizados")
             else:
                 novo = produto(cod_barra=cod,nome=nome,quantidade=estoque,categoria=categoria,tipo=tipo,descricao=desc,marca=marca,valor=preco,validade=validade)
                 db.session.add(novo)
                 db.session.commit()
-                return redirect(url_for('adicionar'))
-        except:
-            return redirect(url_for('adicionar'))
+                return render_template('adicionarproduto.html',alerta="Produto Cadastrado")
     else:
         try:
-            return redirect(url_for('adicionar'))
+            return render_template('adicionarproduto.html')
         except:
-            return redirect(url_for('adicionar'))
+            return render_template('adicionarproduto.html')
 
-@app.route('/estoque/editar')
+@app.route('/estoque/editar', methods = ['GET','POST'])
 def edicao():
     return render_template('edicaoproduto.html')
 
@@ -236,13 +233,36 @@ def sobreproduto():
 def estoque():
     return render_template('estoque.html')
 
+@app.route('/extrato', methods = ['GET','POST'])
+def extrato():
+    try:
+        if request.method == 'POST':
+            db.session.execute("SET lc_time_names = 'pt_BR';")
+            mes = request.form['mes']
+            data = db.session.execute("SELECT DATE_FORMAT(data,'%d/%m/%Y') AS 'data',quantidade,valor FROM compras WHERE MONTH(data)="+mes+";")
+            meses =[]
+            for m in data:
+                meses.append((m))
+            m = db.session.execute("SELECT DATE_FORMAT(data,'%M') FROM compras WHERE MONTH(data)="+mes+";").fetchall()
+            return render_template('extrato.html',Mes_Atual=m[0][0],consulta=meses)
+        else:
+            data = db.session.execute("SELECT DATE_FORMAT(data,'%d/%m/%Y') AS 'data',quantidade,valor FROM compras WHERE MONTH(data) = 1;")
+            meses =[]
+            for m in data:
+                meses.append((m))
+            mes = db.session.execute("SELECT DATE_FORMAT(data,'%M') FROM comprasWHERE MONTH(data) = 1;").fetchall()
+            return render_template('extrato.html',Mes_Atual=mes[0][0],consulta=meses)
+    except:
+        return render_template('extrato.html',Mes_Atual='FALHA')
+
 @app.route('/registro')
 def registro():
     return render_template('registro-venda.html')
 
 @app.route('/consulta')
 def consulta():
-    session.execute("SET lc_time_names = 'pt_BR';")
-    consulta=session.execute("select MONTHNAME(data) as 'data',sum(valor) as'valor' from compras where data "
-    "<= date_add(current_date,interval -6 MONTH) group by data;").fetchall()
-    return str(consulta)
+    data = db.session.execute("SELECT * FROM produto;").fetchall()
+    meses =[]
+    for m in data:
+        meses.append((m))
+    return str(data)
