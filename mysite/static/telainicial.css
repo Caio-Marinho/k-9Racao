@@ -73,7 +73,7 @@ height: 88px;
     width: 1190px;
     height: 500px;
     right: 150px;
-    top: 100%;
+    top: -100%;
   }
   .quiz-chartTip {
     padding: 5px 10px;
