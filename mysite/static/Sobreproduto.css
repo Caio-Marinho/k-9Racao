@@ -149,7 +149,3 @@ a, a:hover, a:focus, a:active {
     text-decoration: none;
     color: inherit;
 }
-.tb {
-    border: solid 5px gray;
-    border-radius: 4px;
-}
