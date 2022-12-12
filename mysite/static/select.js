@@ -9,10 +9,5 @@ function selecionar(uf)
 			mes.options[i].selected = "true";
 			break;
 		}
-        else
-        {
-            mes.options[i].selected = "false";
-            continue;    
-        }
 	}
 }
