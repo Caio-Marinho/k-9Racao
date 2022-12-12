@@ -19,7 +19,7 @@ margin-left: 10px;
 
 .backgroundx{
     background-color: rgba(243, 157, 56, 35%) ;
-    width: 520px;
+    width: 540px;
     height: 250px;
     border-radius: 10px;
     position: absolute;
@@ -28,8 +28,8 @@ margin-left: 10px;
 }
 .Descricao{
     position: absolute;
-    top: 330px;
-    left: 62px;
+    top: 130px;
+    left: 72px;
 }
 .values{
     position: absolute;
@@ -144,15 +144,6 @@ height: 88px;
     width: 90px;
     height: 83px;
   }
-
-.BarraL{
-    position: absolute;
-    left: 1225px;
-    top: 69px;
-    background-color: #F39D38;
-    width: 100px;
-    height: 589px;
-}
 
 a, a:hover, a:focus, a:active {
     text-decoration: none;
