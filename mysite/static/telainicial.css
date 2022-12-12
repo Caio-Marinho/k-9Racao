@@ -69,7 +69,7 @@ height: 88px;
   }
   
   .slds-p-top--medium{
-    position: absolute;
+    position: flex;
     width: 1190px;
     height: 500px;
     left: 20px;
