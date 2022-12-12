@@ -82,10 +82,13 @@
             <div class="col-4 mt-5">
                 <div class="d-flex flex-column">
                         <p>Editar imagem:</p>
-                        <label class="label-file"for="arquivo">
-                            <img class="mt-3" src="https://cdn-icons-png.flaticon.com/128/3524/3524388.png" alt="">
+                        <label class="label-file" for="img-input">
+                            <div class="img-container">
+                                <img width="128" height="128" id="preview" class="mt-3"
+                                 src="https://cdn-icons-png.flaticon.com/128/3524/3524388.png" alt="">
+                            </div>
                         </label>
-                        <input class="input-file" type="file" name="arquivo" id="arquivo">
+                        <input class="input-file" type="file" name="img-input" id="img-input" onchange="readImage()">
                         <div class="d-flex flex-column mt-4" style="width:200px;">
                             <label>Código de Barra:</label>
                             <input type="text" class="k9-input" name="Barra" id="Barra" placeholder="Código de barras">
@@ -94,5 +97,6 @@
             </div>
         </div>
     </form> 
+<script src="../static/imagem.js"></script>
 </body>
 </html>
