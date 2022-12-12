@@ -7,12 +7,10 @@
 
 .titulo {
     display: flex;
-    background-color: #ffffff;
-    width: 1325px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    border-bottom: 2px gray solid;
+  justify-content: space-between;
+  background-color: #ffffff;
+  width: 100%;
+  border-bottom: 2px gray solid;
 }
 
 h2{
