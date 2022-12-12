@@ -70,8 +70,10 @@ height: 88px;
   
   .slds-p-top--medium{
     position: block;
-    width: 700px;
-    height: 1190px;
+    min-width: auto;
+    min-height: auto;
+    max-width: auto;
+    max-height: auto;
     left: 20px;
     top: 60px;
   }
