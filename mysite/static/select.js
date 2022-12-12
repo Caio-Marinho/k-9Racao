@@ -9,7 +9,7 @@ function selecionar(uf)
 			mes.options[i].selected = "true";
 			break;
 		}
-        else
+        else if (mes.options[i].value != uf)
         {
             mes.options[i].selected = "false"; 
             continue;
