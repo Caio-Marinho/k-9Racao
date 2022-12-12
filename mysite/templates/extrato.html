@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../static/extrato.css">
 </head>
 
-<body onload="selecionar('1')">
+<body onload="selecionar('value')">
     <div class="titulo">
         <h2>Extrato</h2> 
         <h2 class="canto">Usuário Logado</h2>
@@ -32,7 +32,7 @@
                     <select class="form-select" name="ano" id="ano">
                         <option value="2022">2022</option>
                    </select>
-                    <select class="form-select" name="mes" id="mes" onchange="this.form.submit()" onload="selecionar('mes')">
+                    <select class="form-select" name="mes" id="mes" onchange="this.form.submit()">
                         <option value="0" selected="true"> </option>
                         <option value="1" selected="false">Janeiro</option>
                         <option value="2" selected="false">Fevereiro</option>
