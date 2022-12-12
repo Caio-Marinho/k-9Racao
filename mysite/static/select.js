@@ -6,13 +6,8 @@ function selecionar(uf)
 	{
 		if (mes.options[i].value == uf)
 		{
-			mes.options[i].selected = "true";
+			mes.options[i].selected = "selected" ;
 			break;
 		}
-        else if (mes.options[i].value != uf)
-        {
-            mes.options[i].selected = "false"; 
-            continue;
-        }
 	}
 }
