@@ -4,7 +4,7 @@ body {
 }
 
 .titulo {
-  display: flex;
+  display: absolute;
   justify-content: space-between;
   background-color: #ffffff;
   width: 100%;
@@ -69,7 +69,7 @@ height: 88px;
   }
   
   .slds-p-top--medium{
-    position: absolute;
+    position: flex;
     width: 1000px;
     height: 300px;
     left: 20px;
