@@ -28,8 +28,8 @@
                     <input type="text" class="form-control" id="Barra" name="Barra" placeholder="Pesquise um item por codigo de barra...">
                     <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-search"></i></button>
                   </div>
-                  <div class="items">
-                      {% for desc in Produto%}
+                  <div class="items" style="height: 600px;">
+                      {% for desc in Produto%}  
                       <div class="item btn">
                           <p>{{desc[0]}}</p>
                           <div class="barra"></div>
