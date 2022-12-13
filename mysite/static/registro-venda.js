@@ -42,3 +42,37 @@ function minus(element) {
         }
     }
 }
+
+function moveSelected(element){
+    const items2 = document.querySelector("#items2");
+    let item     = document.createElement('div');
+    let nome     = document.createElement('p');
+    let total    = document.createElement('p');
+    let barra    = document.createElement('div');
+    let opt      = document.createElement('div');
+    let plus     = document.createElement('button');
+    let minus    = document.createElement('button');
+    let value    = document.createElement('div');
+    let iplus    = document.createElement('i');
+    let iminus   = document.createElement('i');
+    iminus.className = 'fa fa-minus'
+    iplus.className  = 'fa fa-plus'
+    value.className = 'm-2'
+    value.id        = 'value'
+    minus.className = 'btn'
+    plus.className  = 'btn'
+    plus.name       = 'btn'
+    minus.name      = 'btn' 
+    plus.type       = 'button'
+    minus.type      = 'button'
+    minus.id        = 'minus'
+    plus.id         = 'plus'
+    opt.className   = 'opt'
+    opt.id          = 'opts'
+    barra.className = 'barra'
+    total.innerText = 'Total'
+    nome.innerText  = 'Nome prod'
+    item.className  = 'item2';
+    minus.append(iminus)
+    plus.p
+}
