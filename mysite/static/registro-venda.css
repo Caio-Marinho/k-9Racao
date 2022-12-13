@@ -44,6 +44,7 @@ p {
 }
 
 ul {
+    position: fixed;
     text-align: center;
     float: right;
     list-style-type: none;
