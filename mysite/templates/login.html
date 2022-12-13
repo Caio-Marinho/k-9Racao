@@ -28,9 +28,9 @@
                 </div>
                 {% if current_user.is_authenticated %}
                 <div class="card-footer">               
-                    <a href="{{url_for('main.principal')}}" class="button" name="Login">
+                    <button href="{{url_for(main.principal)}}" class="button">
                         Entrar
-                    </a>
+                    </button>
                 </div>
                 {% endif %}
                 {% with messages = get_flashed_messages() %}
