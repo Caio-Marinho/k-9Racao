@@ -29,22 +29,13 @@
                     <input type="text" class="form-control" id="Barra" name="Barra" placeholder="Pesquise um item por codigo de barra...">
                     <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-search"></i></button>
                   </div>
-                  <table>
-                    <thead>
-                        <tr>
-                            <th>Produto<th>
-                            <th>Valor<th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for itens in vendas %}
-                        <tr>
-                            <td>{{itens.Produto}}</td>
-                            <td>R$ {{itens.Valor}}</td>
-                        </tr>
-                        {%endfor%}
-                    </tbody>
-                  </table>
+                  <div class="items">
+                      <div class="item">
+                        <p>{{Produto}}</p>
+                        <div class="barra"></div>
+                        <p>R$ {{Valor}}</p>
+                      </div>
+                  </div>
             </div>
             <div class="col-8">
                 <div class="items" id="items2" style ="height: 400px;">
