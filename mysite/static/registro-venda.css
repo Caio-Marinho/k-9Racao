@@ -95,3 +95,11 @@ ul {
     width: 250px;
     height: 100px;
 }
+
+.titulo {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+    width: 100%;
+    border-bottom: 2px gray solid;
+  }
