@@ -29,11 +29,11 @@
                     <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-search"></i></button>
                   </div>
                   <div class="items">
-                      {% for i in range(len(Produto))%}
+                      {% for desc in Produto%}
                       <div class="item">
-                          <p>{{Produto[i][0]}}</p>
+                          <p>{{desc[0]}}</p>
                           <div class="barra"></div>
-                          <p>R$ {{Produto[i][1]}}</p>
+                          <p>R$ {{desc[1]}}</p>
                         </div>
                       {% endfor %}
                   </div>
