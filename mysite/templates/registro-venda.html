@@ -29,6 +29,7 @@
                     <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-search"></i></button>
                   </div>
                   <div class="items" style="height: 600px;">
+                  {% if ["Barra"] == " " %}
                       {% for desc in Produto%}  
                       <div class="item btn"  onclick="moveSelected(this)">
                           <p>{{desc[0]}}</p>
@@ -36,6 +37,14 @@
                           <p>R$ {{desc[1]}}</p>
                         </div>
                       {% endfor %}
+                      {% endif %}
+                      {% if ["Barra"] != " " %}
+                      <div class="item btn"  onclick="moveSelected(this)">
+                          <p>{{Produto[0][0]}}</p>
+                          <div class="barra"></div>
+                          <p>R$ {{Valor[0][1]}}</p>
+                        </div>
+                      {% endif %}
                   </div>
             </div>
             <div class="col-8">
