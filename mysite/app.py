@@ -1,30 +1,34 @@
 from flask_sqlalchemy import SQLAlchemy
 import sqlalchemy
 from sqlalchemy.orm import sessionmaker
-from flask import Flask, request, render_template,redirect,url_for
+from flask import Flask, request, render_template,redirect,url_for,flash, Blueprint
 from datetime import datetime,date
-#from flask_login import login_user, logout_user
-#from flask_app import LoginManager
-#from flask_app import db
+from flask_login import login_user, logout_user,login_required
+from flask_login import LoginManager
 import os
 import time
 import pygal
 import json
 
+
 os.environ["TZ"] = "America/Recife"
 time.tzset()
-
+main = Blueprint('main', __name__)
+auth = Blueprint('auth', __name__)
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://K9Racao:projeto2022@K9Racao.mysql.pythonanywhere-services.com/K9Racao$default'
-#app.config['SECRET_KEY'] = 'Segredo'
+app.config['SECRET_KEY'] = 'Segredo'
 db = SQLAlchemy(app)
+db.init_app(app)
 engine = sqlalchemy.create_engine('mysql://K9Racao:projeto2022@K9Racao.mysql.pythonanywhere-services.com/K9Racao$default')
 Session = sessionmaker(bind=engine)
 session = Session()
-#login_manager = LoginManager(app)
-
+login_manager = LoginManager()
+login_manager.login_view = 'auth.login'
+login_manager.init_app(app)
+app.register_blueprint(auth)
 
 class funcionario(db.Model):
     cpf = db.Column(db.String(14),primary_key=True)
@@ -150,11 +154,32 @@ class forma_pag_comp(db.Model):
         return {"id_forma_pag_comp":self.id_forma_pag_comp,"tipo":self.tipo,"valor":self.valor,"compras_id_compra":self.compras_id_compra,
         "compras_produtos_id_produto":self.compras_produtos_id_produto,"compras_fornecedores_cnpj":self.compras_fornecedores_cnpj}
 
-#@login_manager.user_loader
-#def logado(cpf):
-    #return funcionario.query.get.filter_by(cpf=cpf).first()
+@login_manager.user_loader
+def logado(cpf):
+    return funcionario.query.get.filter_by(cpf=cpf).first()
 
+@app.route('/')
+def login_usuario():
+    return render_template('login.html')
 
+@app.route('/login', methods = ['GET','POST'])
+def entrar():
+    try:
+        if request.method == 'POST':
+                usuario = request.form['usuario']
+                senha = request.form['password']
+                remember = True if request.form['remember'] else False
+                acesso = login.query.filter_by(usuario=usuario,senha=sqlalchemy.func.md5(senha)).first()
+                if not acesso:
+                    flash('SENHA OU USUÁRIO INCORRETO')
+                    return redirect(url_for('auth.login'))
+
+                login_user(acesso, remember=remember)
+                return redirect(url_for('main.principal'))
+
+        return redirect(url_for('login_usuario'))
+    except:
+        return render_template('login.html', mensagem='FALHA DE CONEXÃO')
 
 
 @app.route('/principal')
