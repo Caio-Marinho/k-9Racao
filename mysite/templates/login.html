@@ -32,7 +32,8 @@
                         Entrar
                     </button>
                 </div>
-                        {% with messages = get_flashed_messages() %}
+            </form>
+            {% with messages = get_flashed_messages() %}
                         {% if messages %}
                             <div class="notification is-danger">
                                 {{ messages[0] }}
@@ -40,7 +41,6 @@
                         {% endif %}
                         {% endwith %}
 
-            </form>
 
         </div>
 
