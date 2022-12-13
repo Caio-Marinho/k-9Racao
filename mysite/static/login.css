@@ -4,6 +4,12 @@ body {
     background-color: white;
 }
 
+
+body, html {
+    width: 100%;
+    height: 100%;
+  }
+  
 .card-header {
     display: flex;
     justify-content: center;
