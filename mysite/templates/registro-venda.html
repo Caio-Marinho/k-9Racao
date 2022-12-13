@@ -29,7 +29,6 @@
                     <input type="text" class="form-control" id="Barra" name="Barra" placeholder="Pesquise um item por codigo de barra...">
                     <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-search"></i></button>
                   </div>
-                  {%for venda in vendas%}
                   <div class="items">
                       <div class="item">
                         <p>{{venda.Produto}}</p>
@@ -37,7 +36,6 @@
                         <p>R$ {{venda.Valor}}</p>
                       </div>
                   </div>
-                  {%endfor%}
             </div>
             <div class="col-8">
                 <div class="items" id="items2" style ="height: 400px;">
