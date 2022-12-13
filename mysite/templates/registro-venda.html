@@ -31,9 +31,11 @@
                   </div>
                   <div class="items">
                       <div class="item">
-                        <p>{{Produto}}</p>
+                        {% for item in vendas %}
+                        <p>{{item.Produto}}</p>
                         <div class="barra"></div>
-                        <p>R$ {{Valor}}</p>
+                        <p>R$ {{item.Valor}}</p>
+                        {% endfor %}
                       </div>
                   </div>
             </div>
