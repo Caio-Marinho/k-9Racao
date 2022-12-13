@@ -22,103 +22,49 @@
             <li><a href="/extrato"><img class="img4" src="../static/imgs/extrato.png" alt=""></a></li>
             <li><a class="active" href="/registro"><img class="img5" src="../static/imgs/carrinhoBranco.png" alt=""></a></li>
         </ul>
-    <div class="row p-5">
-        <div class="col-4">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Pesquise por um item...">
-                <button class="btn btn-outline-secondary"><i class="fa fa-search"></i></button>
-              </div>
-              <div class="items">
-                  <div class="item">
-                    <p>Nome do produto</p>
-                    <div class="barra"></div>
-                    <p>R$ 22,95</p>
+<form action="/registro" method='POST'>
+        <div class="row p-5">
+            <div class="col-4">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Pesquise por um item...">
+                    <button class="btn btn-outline-secondary"><i class="fa fa-search"></i></button>
                   </div>
-              </div>
-        </div>
-        <div class="col-8">
-            <div class="items" style="height: 400px;">
-                <div class="item2">
-                    <p>Produto 1</p>
-                    <div class="barra"></div>
-                    <p>Total: R$ 19,99</p>
-                    <div class="barra"></div>
-                    <div class="opt">
-                        <button onclick="mais()" class="btn"><i class="fa fa-plus"></i></button>
-                        <div class="m-2">1</div>
-                        <button onclick="menos()" class="btn"><i class="fa fa-minus"></i></button>
+                  <div class="items">
+                      <div class="item">
+                        <p>Nome do produto</p>
+                        <div class="barra"></div>
+                        <p>R$ 22,95</p>
+                      </div>
+                  </div>
+            </div>
+            <div class="col-8">
+                <div class="items" id="items2" style="height: 400px;">
+                    <div class="item2">
+                        <p>{{Produto}}</p>
+                        <div class="barra"></div>
+                        <p>Total: R$</p><p id="{{Valor}}">{{Valor}}</p>
+                        <div class="barra"></div>
+                        <div class="opt" id="opts">
+                            <button class="btn" name="btn" id="plus"><i class="fa fa-plus"></i></button>
+                            <div class="m-2" id="value">1</div>
+                            <button class="btn" name="btn" id="minus"><i class="fa fa-minus"></i></button>
+                        </div>
                     </div>
                 </div>
-                <div class="item2">
-                    <p>Produto 1</p>
-                    <div class="barra"></div>
-                    <p>Total: R$ 19,99</p>
-                    <div class="barra"></div>
-                    <div class="opt">
-                        <button onclick="mais()" class="btn"><i class="fa fa-plus"></i></button>
-                        <div class="m-2">1</div>
-                        <button onclick="menos()" class="btn"><i class="fa fa-minus"></i></button>
+                <hr>
+                <div class="opts">
+                    <div style="width: 100%;">
+                        <h1>Total :</h1>
                     </div>
-                </div>
-                <div class="item2">
-                    <p>Produto 1</p>
-                    <div class="barra"></div>
-                    <p>Total: R$ 19,99</p>
-                    <div class="barra"></div>
-                    <div class="opt">
-                        <button class="btn"><i class="fa fa-plus"></i></button>
-                        <div class="m-2">1</div>
-                        <button class="btn"><i class="fa fa-minus"></i></button>
-                    </div>
-                </div>
-                 <div class="item2">
-                    <p>Produto 1</p>
-                    <div class="barra"></div>
-                    <p>Total: R$ 19,99</p>
-                    <div class="barra"></div>
-                    <div class="opt">
-                        <button class="btn"><i class="fa fa-plus"></i></button>
-                        <div class="m-2">1</div>
-                        <button class="btn"><i class="fa fa-minus"></i></button>
-                    </div>
-                </div>
-                
-                <div class="item2">
-                    <p>Produto 1</p>
-                    <div class="barra"></div>
-                    <p>Total: R$ 19,99</p>
-                    <div class="barra"></div>
-                    <div class="opt">
-                        <button class="btn"><i class="fa fa-plus"></i></button>
-                        <div class="m-2">1</div>
-                        <button class="btn"><i class="fa fa-minus"></i></button>
-                    </div>
-                </div>
-                <div class="item2">
-                    <p>Produto 1</p>
-                    <div class="barra"></div>
-                    <p>Total: R$ 19,99</p>
-                    <div class="barra"></div>
-                    <div class="opt">
-                        <button class="btn"><i class="fa fa-plus"></i></button>
-                        <div class="m-2">1</div>
-                        <button class="btn"><i class="fa fa-minus"></i></button>
+                    <div class="d-flex justify-content-around" style="width: 100%;">
+                        <button class="btn btn-k9" type="reset" style="background-color: #d9d9d9;">Cancelar</button>
+                        <button class="btn btn-k9" type="submit" style="background-color: #f39d38;">Finalizar</button>
                     </div>
                 </div>
             </div>
-            <hr>
-            <div class="opts">
-                <div style="width: 100%;">
-                    <h1>Total :</h1>
-                </div>
-                <div class="d-flex justify-content-around" style="width: 100%;">
-                    <button class="btn btn-k9" type="reset"  style="background-color: #d9d9d9;">Cancelar</button>
-                    <button class="btn btn-k9" type="submit" style="background-color: #f39d38;">Finalizar</button>
-                </div>
-            </div>
         </div>
-    </div>
-    <script src="../static/registro-venda.js"></script>
-    <script src="https://kit.fontawesome.com/e1314ff6bd.js" crossorigin="anonymous"></script>
-</body>
-</html>
+    </form>
+        <script src="../static/registro-venda.js"></script>
+        <script src="https://kit.fontawesome.com/e1314ff6bd.js" crossorigin="anonymous"></script>
+    </body>
+    </html>
