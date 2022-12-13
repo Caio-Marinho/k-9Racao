@@ -40,6 +40,7 @@
             </div>
             <div class="col-8">
                 <div class="items" id="items2" style ="height: 400px;">
+                {% if tipo == 'UND.' %}
                     <div class="item2">
                         <p>{{nome}}</p>
                         <div class="barra"></div>
@@ -51,7 +52,8 @@
                             <button type="button" class="btn" name="btn" id="minus"><i class="fa fa-minus"></i></button>
                         </div>
                     </div>
-                    <!-- Caso seja quilo -->
+                    {% endif %}
+                    {% if tipo == 'KG' %}
                     <div class="item2">
                         <p>{{nome}}</p>
                         <div class="barra"></div>
@@ -61,6 +63,7 @@
                             <input type="text" class="form-control" placeholder="Quilos..." name="peso" id="peso">
                         </div>
                     </div>
+                    {% endif %}
                 </div>
                 <hr>
                 <div class="opts">
