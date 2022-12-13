@@ -26,13 +26,13 @@
                     </div>
 
                 </div>
-                {% if current_user.is_authenticated %}
+                
                 <div class="card-footer">               
-                    <button href="{{url_for('main.principal')}}" class="button">
+                    <button type ='submit' class="button">
                         Entrar
                     </button>
                 </div>
-                {% endif %}
+                
                 {% with messages = get_flashed_messages() %}
                 {% if messages %}
                 <div class="notification is-danger">
