@@ -28,9 +28,9 @@
                 </div>
                 <div class="card-footer">               
                     <button type ='submit' class="button">
-                        {% if current_user.is_authenticated %}
-                        <a href="{{url_for('principal')}}" stylesheet="text-decoration: none;">Entrar</a>
-                        {% endif %}
+                        
+                        Entrar
+                        
                     </button>
                 </div>
                 {% with messages = get_flashed_messages() %}

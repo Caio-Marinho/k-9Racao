@@ -154,26 +154,7 @@ class forma_pag_comp(db.Model):
 #def logado(cpf):
     #return funcionario.query.get.filter_by(cpf=cpf).first()
 
-@app.route('/')
-def login_usuario():
-    return render_template('login.html')
 
-@app.route('/login', methods = ['GET','POST'])
-def entrar():
-    try:
-        if request.method == 'POST':
-                usuario = request.form['usuario']
-                senha = request.form['password']
-                acesso = login.query.filter_by(usuario=usuario,senha=sqlalchemy.func.md5(senha)).first()
-                if not acesso:
-                    return render_template('login.html', mensagem='SENHA OU USUÁRIO INCORRETO')
-
-                #logado(acesso)
-                return redirect(url_for('princiapal'))
-
-        return redirect(url_for('login_usuario'))
-    except:
-        return render_template('login.html', mensagem='FALHA DE CONEXÃO')
 
 
 @app.route('/principal')
