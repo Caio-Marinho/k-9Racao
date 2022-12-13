@@ -29,11 +29,11 @@
                     <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-search"></i></button>
                   </div>
                   <div class="items">
-                      {% for coluna in Produto%}
+                      {% for i in range(len(Produto):%}
                       <div class="item">
-                          <p>{{Produto[0][0]}}</p>
+                          <p>{{Produto[i][0]}}</p>
                           <div class="barra"></div>
-                          <p>R$ {{Produto[0][1]}}</p>
+                          <p>R$ {{Produto[i][1]}}</p>
                         </div>
                       {% endfor %}
                   </div>
@@ -41,7 +41,7 @@
             <div class="col-8">
                 <div class="items" id="items2" style ="height: 400px;">
                     <div class="item2">
-                        <p>{{Produto}}</p>
+                        <p>{{}}</p>
                         <div class="barra"></div>
                         <p>Total: R$</p><p id="{{Valor}}">{{Valor}}</p>
                         <div class="barra"></div>
