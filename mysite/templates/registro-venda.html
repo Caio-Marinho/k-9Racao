@@ -39,12 +39,10 @@
                     <tbody>
                         {% for itens in vendas %}
                         <tr>
-                            <div class="item">
                                 <div class="barra">
-                                <td><p>{{itens.Produto}}</p></td>
-                                <td><p>R$ {{itens.Valor}}</p></td>
+                                <td class="item"><p>{{itens.Produto}}</p></td>
+                                <td class="item"><p>R$ {{itens.Valor}}</p></td>
                                 </div>
-                            </div>
                         </tr>
                         {%endfor%}
                     </tbody>
