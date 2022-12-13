@@ -74,5 +74,7 @@ function moveSelected(element){
     nome.innerText  = 'Nome prod'
     item.className  = 'item2';
     minus.append(iminus)
-    plus.p
+    plus.append(iplus)
+    opt.append(plus, value, minus)
+    item.append(nome, barra, total, barra, opt)
 }

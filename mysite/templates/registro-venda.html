@@ -30,7 +30,7 @@
                   </div>
                   <div class="items" style="height: 600px;">
                       {% for desc in Produto%}  
-                      <div class="item btn">
+                      <div class="item btn"  onclick="moveSelected(this)">
                           <p>{{desc[0]}}</p>
                           <div class="barra"></div>
                           <p>R$ {{desc[1]}}</p>
@@ -41,7 +41,7 @@
             <div class="col-8">
                 <div class="items" id="items2" style ="height: 400px;">
                     <div class="item2">
-                        <p></p>
+                        <p>Nome</p>
                         <div class="barra"></div>
                         <p>Total: R$</p><p id="{{Valor}}">{{Valor}}</p>
                         <div class="barra"></div>
