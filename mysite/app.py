@@ -1,8 +1,11 @@
 from flask_sqlalchemy import SQLAlchemy
 import sqlalchemy
 from sqlalchemy.orm import sessionmaker
-from flask import Flask, request, render_template,redirect,url_for,flash
+from flask import Flask, request, render_template,redirect,url_for
 from datetime import datetime,date
+#from flask_login import login_user, logout_user
+#from flask_app import LoginManager
+#from flask_app import db
 import os
 import time
 import pygal
@@ -15,10 +18,13 @@ app = Flask(__name__)
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://K9Racao:projeto2022@K9Racao.mysql.pythonanywhere-services.com/K9Racao$default'
+#app.config['SECRET_KEY'] = 'Segredo'
 db = SQLAlchemy(app)
 engine = sqlalchemy.create_engine('mysql://K9Racao:projeto2022@K9Racao.mysql.pythonanywhere-services.com/K9Racao$default')
 Session = sessionmaker(bind=engine)
 session = Session()
+#login_manager = LoginManager(app)
+
 
 class funcionario(db.Model):
     cpf = db.Column(db.String(14),primary_key=True)
@@ -144,28 +150,31 @@ class forma_pag_comp(db.Model):
         return {"id_forma_pag_comp":self.id_forma_pag_comp,"tipo":self.tipo,"valor":self.valor,"compras_id_compra":self.compras_id_compra,
         "compras_produtos_id_produto":self.compras_produtos_id_produto,"compras_fornecedores_cnpj":self.compras_fornecedores_cnpj}
 
+#@login_manager.user_loader
+#def logado(cpf):
+    #return funcionario.query.get.filter_by(cpf=cpf).first()
+
 @app.route('/')
 def login_usuario():
     return render_template('login.html')
 
 @app.route('/login', methods = ['GET','POST'])
 def entrar():
-    if request.method == 'POST':
-        try:
-            usuario = request.form['usuario']
-            senha = request.form['password']
-            acesso = login.query.filter_by(usuario=usuario,senha=sqlalchemy.func.md5(senha)).first()
-            if acesso:
-                return redirect(url_for('principal'))
-            else:
-                return render_template('login.html', mensagem='SENHA OU USUÁRIO INCORRETO')
-        except:
-            return render_template('login.html', mensagem='FALHA NA CONEXÃO')
-    else:
-        try:
-            return redirect(url_for('login_usuario'))
-        except:
-            return redirect(url_for('login_usuario'))
+    try:
+        if request.method == 'POST':
+                usuario = request.form['usuario']
+                senha = request.form['password']
+                acesso = login.query.filter_by(usuario=usuario,senha=sqlalchemy.func.md5(senha)).first()
+                if not acesso:
+                    return render_template('login.html', mensagem='SENHA OU USUÁRIO INCORRETO')
+
+                #logado(acesso)
+                return redirect(url_for('princiapal'))
+
+        return redirect(url_for('login_usuario'))
+    except:
+        return render_template('login.html', mensagem='FALHA DE CONEXÃO')
+
 
 @app.route('/principal')
 def principal():
@@ -278,13 +287,22 @@ def extrato():
     except:
         return render_template('extrato.html',Mes_Atual='FALHA')
 
-@app.route('/registro')
+@app.route('/registro', methods = ['GET','POST'])
 def registro():
-    return render_template('registro-venda.html')
+    try:
+        if request.method == 'POST':
+            cod = request.form['Barra']
+            venda = db.session.execute("SELECT nome,valor FROM produto WHERE cod_barra = "+cod+";").fetchall()
+            return render_template('registro-venda.html',Produto = venda[0][0], Valor=venda[0][1])
+        else:
+            venda = db.session.execute("SELECT nome,valor FROM produto;").fetchall()
+            return render_template('registro-venda.html',Produto=venda)
+    except:
+        return render_template('registro-venda.html',Produto='Ovo',Valor='2.30')
 
 @app.route('/consulta')
 def consulta():
-    data = db.session.execute("SELECT * FROM produto;").fetchall()
+    data = db.session.execute("SELECT nome,valor FROM produto WHERE cod_barra = 27898363317777;").fetchall()
     meses =[]
     for m in data:
         meses.append((m))

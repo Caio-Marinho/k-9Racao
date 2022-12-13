@@ -29,11 +29,13 @@
                     <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-search"></i></button>
                   </div>
                   <div class="items">
+                      {% for coluna in Produto%}
                       <div class="item">
-                        <p>{{Produto}}</p>
-                        <div class="barra"></div>
-                        <p>R$ {{Valor}}</p>
-                      </div>
+                          <p>{{Produto[0][0]}}</p>
+                          <div class="barra"></div>
+                          <p>R$ {{Produto[0][1]}}</p>
+                        </div>
+                      {% endfor %}
                   </div>
             </div>
             <div class="col-8">
