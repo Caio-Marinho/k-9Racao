@@ -29,7 +29,7 @@
                     <input type="text" class="form-control" id="Barra" name="Barra" placeholder="Pesquise um item por codigo de barra...">
                     <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-search"></i></button>
                   </div>
-                  <table class="items">
+                  <table>
                     <thead>
                         <tr>
                             <th>Produto<th>
@@ -39,8 +39,8 @@
                     <tbody>
                         {% for itens in vendas %}
                         <tr>
-                            <td class="item">{{itens.Produto}}</td>
-                            <td class="item">R$ {{itens.Valor}}</td>
+                            <td>{{itens.Produto}}</td>
+                            <td>R$ {{itens.Valor}}</td>
                         </tr>
                         {%endfor%}
                     </tbody>
