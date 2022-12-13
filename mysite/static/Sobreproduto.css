@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
-
-.body{
-    padding: 0;
-    font-family: 'inter', sans-serif;
-}
+* {
+    font-family: Verdana;
+    margin: 0px;
+    padding: 0px;
+ }
 
 .titulo {
     display: flex;
@@ -13,91 +12,14 @@
   border-bottom: 2px gray solid;
 }
 
-h2{
-margin-left: 10px;
-}
-
-.backgroundx{
-    background-color: rgba(243, 157, 56, 35%) ;
-    width: 540px;
-    height: 250px;
-    border-radius: 10px;
-    position: absolute;
-    top: 90px;
-    left: 65px;
-}
-.Descricao{
-    position: absolute;
-    top: 130px;
-    left: 72px;
-}
-.values{
-    position: absolute;
-    top: 65%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.valor{
-    position: absolute;
-    left:430px ;
-}
-.Quantidade{
-    position: absolute;
-    left: 100px;
-}
-.botoes1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 590px;
-    left: 200px;
-}
-.excluir{
-    font-size: large;
-    width: 120px;
-    height: 50px;
-    position: absolute;
-    right: -15px;
-    background-color: #F39D38;
-    border-width: 0;
-    border-radius: 6px;
-}
-.excluir:hover{
-    background-color: #ffb867;
-}
-.editar{
-    font-size: large;
-    width: 120px;
-    height: 50px;
-    position: absolute;
-    left: 200px;
-    background-color: #F39D38;
-    border-width: 0;
-    border-radius: 6px;
-}
-.editar:hover{
-    background-color: #ffb867;
-}
-.LinhaCentral{
-    border-left: 6px solid rgb(117, 117, 117);
-    height: 590px;
-    position: absolute;
-    top: 68px;
-    left: 650px;
-}
-.historicoV{
-    position: absolute;
-    left: 700px;
-    top: 120px;
-}
-
 body, html {
     width: 100%;
     height: 100%;
   }
   
+p {
+  margin-bottom: 0px;
+}
 
 ul {
     text-align: center;
@@ -125,34 +47,25 @@ ul {
     background-color: orange;
   }
 
-
-  .img1{
-    width: 78px;
-    height: 79.21px;
+  .btn-k9 {
+    font-weight: bold;
+    font-size: x-large;
+    width: 250px;
+    height: 100px;
+    background-color: #f39d38;
 }
 
-.img2{
-    width: 78px;
-    height: 75.35px;
+.item {
+  display: flex;
+  justify-content: space-around;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  align-items: center;
+  height: 60px;
+  margin-bottom: 10px;
 }
 
-.img3{
-    width: 78px;
-    height: 79.21px;
-}
-
-.img4{
-    width: 83px;
-height: 88px;
-  }
-
-
-  .img5{
-    width: 90px;
-    height: 83px;
-  }
-
-a, a:hover, a:focus, a:active {
-    text-decoration: none;
-    color: inherit;
+.barra {
+  border: 2px black solid;
+  height: 50px;
 }
