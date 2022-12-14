@@ -65,7 +65,7 @@ function updateTotal() {
 
 
 function moveSelected(element) {
-  const items2 = document.querySelector("#items2");
+  const items2 = document.querySelector(".items2");
   let item = document.createElement("div");
   let nome = document.createElement("p");
   let barra1 = document.createElement("div");
@@ -101,7 +101,7 @@ function moveSelected(element) {
   item.className = "item2";
   minus.append(iminus);
   plus.append(iplus);
-  opt.append(plus, minus);
+  opt.append(plus, value, minus);
   item.append(nome, barra1, valor, barra2, opt);
   items2.append(item);
   addEvent()
