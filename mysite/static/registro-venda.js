@@ -14,7 +14,7 @@ function plus(element) {
   for (let i = 0; i < elements.length; i++) {
     if (elements[i].id == "value") {
       let plus = parseInt(elements[i].innerHTML);
-      if (!(plus + 1 > 0)) {
+      if (plus + 1 > 0) {
         elements[i].innerHTML = plus + 1;
       }
       const total = elements[i].parentNode.parentNode.childNodes;
