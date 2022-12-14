@@ -101,7 +101,7 @@ function moveSelected(element) {
   item.className = "item2";
   minus.append(iminus);
   plus.append(iplus);
-  opt.append(plus, value, minus);
+  opt.append(plus, minus);
   item.append(nome, barra1, valor, barra2, opt);
   items2.append(item);
   addEvent()
