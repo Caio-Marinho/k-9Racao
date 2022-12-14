@@ -34,7 +34,7 @@ function minus(element) {
   for (let i = 0; i < elements.length; i++) {
     if (elements[i].id == "value") {
       let minus = parseInt(elements[i].innerHTML);
-      if (!(minus - 1 <= 1)) {
+      if (!(minus - 1 <= 0)) {
         elements[i].innerHTML = minus - 1;
       }else{
         element.target.parentNode.parentNode.remove()
