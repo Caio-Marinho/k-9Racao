@@ -10,11 +10,11 @@ body, html {
   }
   
 .titulo {
-    display: flex;
-    justify-content: space-between;
-    background-color: #ffffff;
-    width: 100%;
-    border-bottom: 2px gray solid;
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  width: 100%;
+  border-bottom: 2px gray solid;
 }
 
 h1{

@@ -56,7 +56,7 @@
                         <p>Total: R$</p><p id="{{valor}}">{{valor}}</p>
                         <div class="barra"></div>
                         <div class="opt" id="opts">
-                            <button type="button" class="btn" name="btn" id="plus"><i class="fa fa-plus"></i></button>
+                            <button type="button" class="btn" name="btn" id="plus" ><i class="fa fa-plus"></i></button>
                             <div class="m-2" id="value">0</div>
                             <button type="button" class="btn" name="btn" id="minus"><i class="fa fa-minus"></i></button>
                         </div>
@@ -76,8 +76,8 @@
                 </div>
                 <hr>
                 <div class="opts">
-                    <div style="width: 100%;">
-                        <h1>Total :</h1>
+                    <div class="d-flex flex-row">
+                        <h1>Total:  R$</h1><h1 id="total-venda">{{valor}}</h1>
                     </div>
                     <div class="d-flex justify-content-around" style="width: 100%;">
                         <button class="btn btn-k9" type="reset" style="background-color: #d9d9d9;">Cancelar</button>
