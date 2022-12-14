@@ -13,7 +13,10 @@ function plus(element) {
   const elements = element.target.parentNode.childNodes;
   for (let i = 0; i < elements.length; i++) {
     if (elements[i].id == "value") {
-      elements[i].innerHTML = parseInt(elements[i].innerHTML) + 1;
+      let plus = parseInt(elements[i].innerHTML);
+      if (!(plus + 1 > 0)) {
+        elements[i].innerHTML = plus + 1;
+      }
       const total = elements[i].parentNode.parentNode.childNodes;
       for (let j = 0; j < total.length; j++) {
         const element = total[j];
