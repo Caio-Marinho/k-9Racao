@@ -17,7 +17,7 @@ function plus(element) {
       const total = elements[i].parentNode.parentNode.childNodes;
       for (let j = 0; j < total.length; j++) {
         const element = total[j];
-        if (element.tagName == "P" && element.id == "value") {
+        if (element.tagName == "P" && (element.id == "value" || element.name == 'value')) {
             element.innerHTML = parseFloat(
             parseInt(elements[i].innerHTML) *
             parseFloat(element.id.replace(",", "."))
@@ -39,7 +39,7 @@ function minus(element) {
       const total = elements[i].parentNode.parentNode.childNodes;
       for (let j = 0; j < total.length; j++) {
         const element = total[j];
-        if (element.tagName == "P" && element.id == "value") {
+        if (element.tagName == "P" &&  (element.id == "value" || element.name == 'value')) {
           element.innerHTML = parseFloat(
             parseInt(elements[i].innerHTML) *
               parseFloat(element.id.replace(",", "."))
@@ -54,7 +54,6 @@ function moveSelected(element) {
   const items2 = document.querySelector("#items2");
   let item = document.createElement("div");
   let nome = document.createElement("p");
-  let total = document.createElement("p");
   let barra1 = document.createElement("div");
   let barra2 = document.createElement("div");
   let opt = document.createElement("div");
@@ -64,12 +63,11 @@ function moveSelected(element) {
   let iplus = document.createElement("i");
   let iminus = document.createElement("i");
   let valor = document.createElement("p")
-  total.id = 'value';
   iminus.className = "fa fa-minus";
   iplus.className = "fa fa-plus";
   value.className = "m-2";
   value.id = "value";
-  value.innerHTML = '0';
+  value.innerHTML = '1';
   minus.className = "btn";
   plus.className = "btn";
   plus.name = "btn";
@@ -82,17 +80,16 @@ function moveSelected(element) {
   opt.id = "opts";
   barra1.className = "barra";
   barra2.className = "barra";
-  total.innerText = "Total: R$";
-  valor.innerText = element.children[2].innerText.slice(2);
+  valor.name = 'value'
+  valor.id = element.children[2].innerText.slice(3).trim().replace(",", ".");
+  valor.innerHTML = valor.id
   nome.innerText = element.children[0].innerText;
   item.className = "item2";
   minus.append(iminus);
   plus.append(iplus);
   opt.append(plus, value, minus);
-  item.append(nome, barra1, total, valor, barra2, opt);
+  item.append(nome, barra1, valor, barra2, opt);
   items2.append(item);
   addEvent()
 }
-
-
 addEvent()
