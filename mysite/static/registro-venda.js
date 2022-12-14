@@ -63,6 +63,7 @@ function moveSelected(element) {
   let value = document.createElement("p");
   let iplus = document.createElement("i");
   let iminus = document.createElement("i");
+  let valor = document.createElement("p")
   total.id = 'value';
   iminus.className = "fa fa-minus";
   iplus.className = "fa fa-plus";
@@ -81,13 +82,14 @@ function moveSelected(element) {
   opt.id = "opts";
   barra1.className = "barra";
   barra2.className = "barra";
-  total.innerText = "Total: " + element.children[2].innerText;
+  total.innerText = "Total: R$";
+  valor.innerText = element.children[2].innerText.slice(2);
   nome.innerText = element.children[0].innerText;
   item.className = "item2";
   minus.append(iminus);
   plus.append(iplus);
   opt.append(plus, value, minus);
-  item.append(nome, barra1, total, barra2, opt);
+  item.append(nome, barra1, total, valor, barra2, opt);
   items2.append(item);
   addEvent()
 }
