@@ -287,7 +287,7 @@ def registro():
             venda = db.session.execute("SELECT nome,valor FROM produto;").fetchall()
             return render_template('registro-venda.html',Produto=venda,Valor=venda,valor=venda[0][1],nome=venda[0][0])
     except:
-        return render_template('registro-venda.html')
+        return redirect(url_for('registro'))
 
 @app.route('/consulta')
 def consulta():
