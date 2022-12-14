@@ -35,6 +35,8 @@ function minus(element) {
       let minus = parseInt(elements[i].innerHTML);
       if (!(minus - 1 < 0)) {
         elements[i].innerHTML = minus - 1;
+      }else{
+        element.target.parentNode.parentNode.remove()
       }
       const total = elements[i].parentNode.parentNode.childNodes;
       for (let j = 0; j < total.length; j++) {
