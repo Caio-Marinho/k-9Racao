@@ -65,7 +65,7 @@ function updateTotal() {
 
 
 function moveSelected(element) {
-  const items2 = document.querySelector(".items2");
+  const items2 = document.querySelector("#items2");
   let item = document.createElement("div");
   let nome = document.createElement("p");
   let barra1 = document.createElement("div");
