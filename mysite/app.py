@@ -1,7 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 import sqlalchemy
 from sqlalchemy.orm import sessionmaker
-from flask import Flask, request, render_template,redirect,url_for,flash
+from flask import Flask, request, render_template,redirect,url_for
 from datetime import datetime,date
 import os
 import time
