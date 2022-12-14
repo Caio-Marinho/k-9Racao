@@ -281,17 +281,13 @@ def registro():
     try:
         if request.method == 'POST':
             cod = request.form['Barra']
-            if cod is None:
-                return redirect(url_for('registro'))
-            else:
-                venda = db.session.execute("SELECT nome,valor,tipo FROM produto WHERE cod_barra = "+cod+";").fetchall()
-                return render_template('registro-venda.html',Produto = venda[0][0], Valor=venda[0][1],nome=venda[0][0],tipo=venda[0][2],cod=venda)
+            venda = db.session.execute("SELECT nome,valor,tipo FROM produto WHERE cod_barra = "+cod+";").fetchall()
+            return render_template('registro-venda.html',Produto = venda[0][0], Valor=venda[0][1],nome=venda[0][0],tipo=venda[0][2],cod=venda)
         else:
             venda = db.session.execute("SELECT nome,valor FROM produto;").fetchall()
             return render_template('registro-venda.html',Produto=venda,Valor=venda,valor=venda[0][1],nome=venda[0][0])
     except:
-        venda = db.session.execute("SELECT nome,valor FROM produto;").fetchall()
-        return render_template('registro-venda.html',Produto=venda,Valor=venda,valor=venda[0][1],nome=venda[0][0])
+        return render_template('registro-venda.html')
 
 @app.route('/consulta')
 def consulta():
