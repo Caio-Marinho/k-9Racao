@@ -26,14 +26,15 @@ function plus(element) {
       }
     }
   }
+  updateTotal()
 }
 
 function minus(element) {
   const elements = element.target.parentNode.childNodes;
-  for (let i = 0; i <= elements.length; i++) {
+  for (let i = 0; i < elements.length; i++) {
     if (elements[i].id == "value") {
       let minus = parseInt(elements[i].innerHTML);
-      if (!(minus - 1 < 1)) {
+      if (!(minus - 1 <= 0)) {
         elements[i].innerHTML = minus - 1;
       }else{
         element.target.parentNode.parentNode.remove()
@@ -50,7 +51,18 @@ function minus(element) {
       }
     }
   }
+  updateTotal()
 }
+
+function updateTotal() {
+    const total = document.querySelector('#total-venda')
+    total.innerText = '0'
+    const items2 = document.querySelectorAll('.item2')
+    for (let i = 0; i<items2.length; i++) {
+        total.innerText = parseFloat(total.innerText) + parseFloat(items2[i].childNodes[2].innerHTML)
+    }
+}
+
 
 function moveSelected(element) {
   const items2 = document.querySelector("#items2");
@@ -94,4 +106,6 @@ function moveSelected(element) {
   items2.append(item);
   addEvent()
 }
+
+
 addEvent()
