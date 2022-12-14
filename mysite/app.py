@@ -1,7 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 import sqlalchemy
 from sqlalchemy.orm import sessionmaker
-from flask import Flask, request, render_template,redirect,url_for
+from flask import Flask, request, render_template,redirect,url_for,flash
 from datetime import datetime,date
 import os
 import time
@@ -150,22 +150,20 @@ def login_usuario():
 
 @app.route('/login', methods = ['GET','POST'])
 def entrar():
-    if request.method == 'POST':
-        try:
-            usuario = request.form['usuario']
-            senha = request.form['password']
-            acesso = login.query.filter_by(usuario=usuario,senha=sqlalchemy.func.md5(senha)).first()
-            if acesso:
-                return redirect(url_for('principal'))
-            else:
-                return render_template('login.html', mensagem='SENHA OU USUÁRIO INCORRETO')
-        except:
-            return render_template('login.html', mensagem='FALHA NA CONEXÃO')
-    else:
-        try:
+    try:
+        if request.method == 'POST':
+                usuario = request.form['usuario']
+                senha = request.form['password']
+                acesso = login.query.filter_by(usuario=usuario,senha=sqlalchemy.func.md5(senha)).first()
+                if acesso:
+                    return redirect(url_for('principal'))
+                else:
+                    return render_template('login.html', mensagem='SENHA OU USUÁRIO INCORRETO')
+
+        else:
             return redirect(url_for('login_usuario'))
-        except:
-            return redirect(url_for('login_usuario'))
+    except:
+        return render_template('login.html', mensagem='FALHA NA CONEXÃO')
 
 @app.route('/principal')
 def principal():
@@ -219,7 +217,7 @@ def adicionar():
         else:
             return render_template('adicionarproduto.html')
     except:
-        return render_template('adicionarproduto.html',alerta="FALHA DE CONEXÃO,Produto não cadastrado!!!, Tente novamente.")
+        return render_template('adicionarproduto.html',alerta="FALHA DE CONEXÃO,Produto não cadatrado!!!, Tente novamente.")
 
 @app.route('/estoque/editar', methods = ['GET','POST'])
 def edicao():
@@ -276,20 +274,24 @@ def extrato():
             mes = db.session.execute("SELECT DATE_FORMAT(CURDATE(),'%M'),DATE_FORMAT(CURDATE(),'%m');").fetchall()
             return render_template('extrato.html',Mes_Atual=mes[0][0],consulta=meses,selecionar=mes[0][1])
     except:
-        return render_template('extrato.html',Mes_Atual='FALHA')
+        return render_template('extrato.html',Mes_Atual='FALHA DE CONEXÃO')
 
 @app.route('/registro', methods = ['GET','POST'])
 def registro():
     try:
         if request.method == 'POST':
             cod = request.form['Barra']
-            venda = db.session.execute("SELECT nome,valor,tipo FROM produto WHERE cod_barra = "+cod+";").fetchall()
-            return render_template('registro-venda.html',Produto = venda[0][0], Valor=venda[0][1],nome=venda[0][0],tipo=venda[0][2],cod=cod)
+            if cod is None:
+                return redirect(url_for('registro'))
+            else:
+                venda = db.session.execute("SELECT nome,valor,tipo FROM produto WHERE cod_barra = "+cod+";").fetchall()
+                return render_template('registro-venda.html',Produto = venda[0][0], Valor=venda[0][1],nome=venda[0][0],tipo=venda[0][2],cod=venda)
         else:
             venda = db.session.execute("SELECT nome,valor FROM produto;").fetchall()
             return render_template('registro-venda.html',Produto=venda,Valor=venda,valor=venda[0][1],nome=venda[0][0])
     except:
-        return render_template('registro-venda.html')
+        venda = db.session.execute("SELECT nome,valor FROM produto;").fetchall()
+        return render_template('registro-venda.html',Produto=venda,Valor=venda,valor=venda[0][1],nome=venda[0][0])
 
 @app.route('/consulta')
 def consulta():
