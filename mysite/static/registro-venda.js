@@ -30,7 +30,7 @@ function plus(element) {
 
 function minus(element) {
   const elements = element.target.parentNode.childNodes;
-  for (let i = 0; i < elements.length; i++) {
+  for (let i = 0; i <= elements.length; i++) {
     if (elements[i].id == "value") {
       let minus = parseInt(elements[i].innerHTML);
       if (!(minus - 1 <= 1)) {
