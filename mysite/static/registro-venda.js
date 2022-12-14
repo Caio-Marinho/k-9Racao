@@ -59,7 +59,7 @@ function updateTotal() {
     total.innerText = '0'
     const items2 = document.querySelectorAll('.item2')
     for (let i = 0; i<items2.length; i++) {
-        total.innerText = parseFloat(total.innerText) //+ parseFloat(items2[i].childNodes[2].innerHTML)
+        total.innerText = parseFloat(total.innerText) + parseFloat(items2[i].childNodes[2].innerHTML)
     }
 }
 
