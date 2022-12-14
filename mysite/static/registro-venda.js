@@ -82,7 +82,6 @@ function moveSelected(element) {
   opt.id = "opts";
   barra1.className = "barra";
   barra2.className = "barra";
-  total.innerText = "Total: R$";
   valor.name = 'value'
   valor.id = element.children[2].innerText.slice(3).trim().replace(",", ".");
   valor.innerHTML = valor.id
