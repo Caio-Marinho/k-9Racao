@@ -29,7 +29,7 @@
                     <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-search"></i></button>
                   </div>
                   <div class="items" style="height: 600px;">
-                    {% if not cod %}
+                    {% if cod == " " %}
                       {% for desc in Produto%}  
                       <div class="item btn"  onclick="moveSelected(this)">
                           <p>{{desc[0]}}</p>
@@ -38,7 +38,7 @@
                         </div>
                       {% endfor %}
                       {% endif %}
-                      {% if cod %}
+                      {% if cod != " " %}
                       <div class="item btn"  onclick="moveSelected(this)">
                       <p>{{Produto}}</p>
                       <div class="barra"></div>
