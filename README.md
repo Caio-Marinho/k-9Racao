@@ -1,5 +1,6 @@
-# Fauldade Senac-PE
-# Projeto Integrador
-# 2 PERÍODO (2022.2)
-# k-9Racao
+# Faculdade Senac-PE
+# PI
+# k-9 Rações
 # Curso ADS - EMBARQUE DIGITAL - Turma 2
+
+Esse projeto foi desenvolvido no intuito de usar como projeto para o projeto integrador da Faculdade SENAC PE
